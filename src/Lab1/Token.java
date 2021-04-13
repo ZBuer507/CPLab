@@ -2,6 +2,7 @@ package Lab1;
 
 import java.lang.String;
 
+//”√¿¥¥Ê¥¢token
 public class Token {
 	public int line;
 	public String str1;

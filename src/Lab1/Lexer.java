@@ -3,6 +3,7 @@ package Lab1;
 import java.util.HashMap;
 import java.util.Map;
 
+//词法分析器
 public class Lexer {
 	private String text;
 	private MyList list;

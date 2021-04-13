@@ -1,0 +1,6 @@
+Edited by JiataoZheng
+Version 1.0.1
+Token:		contain string of token
+MyList:		contain tokens
+TokenRec:	recognize token
+Lexer:		lexical analyzer

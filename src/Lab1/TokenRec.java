@@ -71,6 +71,7 @@ public class TokenRec {
 		return "ERROR";
 	}
 	
+	//识别不同类型字符
 	public static Boolean isPlusEqu(char ch){  
         return ch == '+' || ch == '-' || ch == '*' || ch == '/' || ch == '=' || ch == '>' 
         		|| ch == '<' || ch == '&' || ch == '|'  || ch == '^' || ch == '%' || ch == '!' ;  
@@ -126,7 +127,8 @@ public class TokenRec {
         return ch == 'a' || ch == 'b' || ch == 'f' || ch == 'n' || ch == 'r'  
                 || ch == 't' || ch == 'v' || ch == '?' || ch == '0';  
     }
-
+	
+	//识别数字的DFA
 	public static String digitDFA[] = {
 		"#d#####",
 		"#d.#e##",
@@ -161,6 +163,7 @@ public class TokenRec {
         		return 0;
     }
 	
+	//识别注释的DFA
 	public static String noteDFA[] = {
 			"#/###",
 			"##*##",
