@@ -2,12 +2,16 @@ package Lab1;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.InputStream;
 
 public class Main{
 	public Main(){
-		String filename = "src/Lab1/test.txt";
+		String filename = "test.txt";
+		String filename2 = "lexer.out";
 		File file = new File(filename);
+		
 		String text = "";
 		MyList list = new MyList();
 		try{
@@ -23,10 +27,19 @@ public class Main{
 		
 		Lexer text_lex = new Lexer(text, list);
 		text_lex.lex();
-		list.print();
+		//list.print();
+		
+		FileWriter file2;
+		try {
+			file2 = new FileWriter(filename2);
+			file2.write(list.print());
+			file2.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
-    public static void main(String[] agrs){
+    public static void main(String[] agrs) throws IOException{
         new Main();
     }
 }

@@ -1,6 +1,8 @@
 Edited by JiataoZheng
 Version 1.0.1
-Token:		contain string of token
-MyList:		contain tokens
-TokenRec:	recognize token
-Lexer:		lexical analyzer
+Lab1/Token:		contain string of token
+Lab1/MyList:	contain tokens
+Lab1/TokenRec:	recognize token
+Lab1/Lexer:		lexical analyzer
+				output as lexer.out
+

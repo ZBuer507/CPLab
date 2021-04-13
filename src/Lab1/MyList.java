@@ -32,14 +32,15 @@ public class MyList {
 		return this.tokenList.add(new Token(line, str1, str2, str3));
 	}
 	
-	public void print() {
+	public String print() {
+		String strList = "";
 		if(isEmpty()){
             System.out.print("Empty");
-            return;
+            return "Empty";
         }
 		System.out.println(this.len);
-		for(Token token : this.tokenList) {
-			token.print();
-		}
+		for(Token token : this.tokenList)
+			strList += token.print();
+		return strList;
 	}
 }

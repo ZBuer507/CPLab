@@ -22,11 +22,20 @@ public class Token {
 		this.str3 = str3;
 	}
 	public String print() {
-		String str ="line" + this.line + ":\t" + 
+		String str;
+		if(this.str3.equals("ERROR")) {
+			str ="Lexical error at Line" + this.line + ":\t" + 
+					this.str1.replace("\r\n", "\\r\\n") + "\n\t" + 
+					this.str2.replace("\r\n", "\\r\\n") + "\n\t" + 
+					this.str3.replace("\r\n", "\\r\\n") + "\n";
+			System.out.print(str);
+		}else {
+			str ="Line" + this.line + ":\t" + 
 				this.str1.replace("\r\n", "\\r\\n") + "\n\t" + 
 				this.str2.replace("\r\n", "\\r\\n") + "\n\t" + 
-				this.str3.replace("\r\n", "\\r\\n");
-		System.out.println(str);
+				this.str3.replace("\r\n", "\\r\\n") + "\n";
+			System.out.print(str);
+		}
 		return str;
 	}
 }
