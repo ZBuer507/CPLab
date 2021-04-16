@@ -82,8 +82,15 @@ public class TokenRec {
 	public static Boolean isAlpha(char ch){
 	    return ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') || ch == '_');
 	}
-	public static Boolean isDigit(char ch){  
-        return (ch >= '0' && ch <= '9');  
+	public static Boolean isDigit(char ch){
+        return (ch >= '0' && ch <= '9');
+    }
+	public static Boolean isOctDigit(char ch){
+        return (ch >= '0' && ch <= '7');
+    }
+	public static Boolean isHexDigit(char ch){
+        return (ch >= '0' && ch <= '9') || (ch >= 'a' && ch <= 'f') 
+        		||(ch >= 'A' && ch <= 'F') || ch == 'x' || ch == 'X';
     }
 	
 	// String DFA : a代表任意字符，b代表除\和"之外的字符
@@ -137,12 +144,12 @@ public class TokenRec {
 		"#####-d",
 		"######d",
 		"######d",
-		"",
-		"2 4 7",
 	};
-	public static int is_digit_state(char ch, char test) {  
-        if (test == 'd') 
-            if (isDigit(ch))  
+	public static int is_digit_state(char ch, char test, Boolean isHex) { 
+        if (test == 'd')
+        	if (isHex && isHexDigit(ch))
+        		return 1; 
+        	else if (isDigit(ch))  
                 return 1;  
             else  
                 return 0;  
@@ -170,8 +177,6 @@ public class TokenRec {
 			"##c*#",
 			"##c*/",
 			"#####",
-			"",
-			"5",
 	};
 	public static Boolean is_note_state(char ch, char nD, int s){  
         if (s == 2)

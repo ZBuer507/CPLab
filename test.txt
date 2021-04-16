@@ -1,34 +1,45 @@
-//single line
+//line1
 float a = 1.22;
 float b = 2.32e+1;
 float c = 22.3E-1;
 int d = 22E1;
-String t = "WJP";
+int e = 0x9af;
+int f = 0666;
+String name = "ZhengJiaTao";
 /*
-multiple line
+line1
+line2
 */
-/* Set to zero */
-void zero(int *arr) {
+
+/* note */
+void function(int *node) 
+{
     for (int i = 0; i < n-1; i++)
-	arr[i]=0;
+		node[i]=0;
 }
 
-int main() {
-	String course = "bianyiyuanli";
-    int arr[] = {1,2,3,4,5};
-    zero(arr);
+int main() 
+{
+    int arr[] = [1,2,3,4,5];
+    function(arr);
     return 0;
 }
-while(num != 100) {
+while(num != 100)
+{
     num++;
 }
 
-/* buggy code */
-
+/* bug test */
 int 1_bug = 3;
-float bug1 = 2.2.2;
-float bug2 = 1..1;
-char bug3 = 'a;
-String course = "bianyiyuanli;
-/*wjp
+float bug1 = 1.1.1;
+float bug2 = 2..2;
+float bug3 = .;
+int bug4 = 0xag;
+int bug5 = 099;
+char bug6 = 'a;
+String bug7 = "bianyiyuanli;
+/*bug8
+
+
+
 

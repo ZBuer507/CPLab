@@ -34,10 +34,13 @@ public class Lexer {
 			char[] strline = str.toCharArray();
 			for(int i = 0; i < strline.length; i++) {
 				char ch = strline[i];
+				char ch0 = '0';
+				if(i > 1) ch0 = strline[i-1];
 				//遇到空格视为新的串
 				if (ch == ' ')
 					continue;
 				String token = "";
+				//标识符和关键字
 				if (TokenRec.isAlpha(ch)){
                     while (ch != '\0'
                     		&& (TokenRec.isAlpha(ch) || TokenRec.isDigit(ch))){
@@ -48,10 +51,11 @@ public class Lexer {
                         ch = strline[i];  
                     }
                     i--;
-                    //关键词
+                    //关键字
                     if (TokenRec.isKeyword(token)){  
                         list.insert(m+1, token, token.toUpperCase(), "-");
                     }else{
+                    	//标识符
                     	if (symbol.isEmpty() 
                     			|| (!symbol.isEmpty() && !symbol.containsKey(token))){
                             symbol.put(token, symbol_pos);   
@@ -60,25 +64,51 @@ public class Lexer {
                     	list.insert(m+1, token, "IDN", token);
                     }
                     token = "";
+                //数字
                 }else if(TokenRec.isDigit(ch)){
 					int state = 1;
 					int k;
+					Boolean haveMistake = false;
+					//八进制Octal
+					Boolean isOctNum = false;
+					//十六进制Hexadecimal
+					Boolean isHexNum = false;
 					//浮点数
                     Boolean isfloat = false;
                     //科学计数
                     Boolean isSciNum = false;
-                    while ( (ch != '\0') && (TokenRec.isDigit(ch) || ch == '.' || ch == 'e' 
+                    while ( (ch != '\0') && (TokenRec.isHexDigit(ch) || ch == '.' || ch == 'e' 
                     		|| ch == '-' || ch == 'E' || ch == '+')){
-                    	if (ch == '.') 
+                    	if (isOctNum && !TokenRec.isOctDigit(ch) && ch != '0')
+                    		haveMistake = true;
+                    	if (!isHexNum && !TokenRec.isDigit(ch) 
+                    			&& ch != 'e' && ch != 'E' && ch != '+' && ch != '-')
+                    		haveMistake = true;
+                    	if (ch == '.' && !isOctNum && !isHexNum) {
                     		isfloat = true;
-                    	if (ch == 'e' || ch == 'E'){
+                    		haveMistake = false;
+                    	}
+                    	if ((ch == 'e' || ch == 'E') && !isOctNum && !isHexNum){
                     		isfloat = false;
                     		isSciNum = true;
+                    		haveMistake = false;
                     	}
-
+                    	if ((TokenRec.isPlusEqu(ch0)||ch0==' ')&& ch == '0') {
+                    		isfloat = false;
+                    		isSciNum = false;
+                    		isOctNum = true;
+                    		haveMistake = false;
+                    	}
+                    	if (isOctNum && (ch == 'x' || ch == 'X')) {
+                    		isfloat = false;
+                    		isSciNum = false;
+                    		isOctNum = false;
+                    		isHexNum = true;
+                    		haveMistake = false;
+                    	}
                         for (k = 0; k <= 6; k++){
                             char tmpstr[] = TokenRec.digitDFA[state].toCharArray();
-                            if (ch != '#' && TokenRec.is_digit_state(ch, tmpstr[k]) == 1){
+                            if (ch != '#' && TokenRec.is_digit_state(ch, tmpstr[k], isHexNum) == 1){
                                 token += ch;
                                 state = k;
                                 break;
@@ -91,7 +121,7 @@ public class Lexer {
                         	break;
                         ch = strline[i];
                     }
-                    Boolean haveMistake = false;  
+                    
                     if (state == 2 || state == 4 || state == 5){  
                         haveMistake = true;  
                     }else{  
@@ -120,6 +150,10 @@ public class Lexer {
                     		list.insert(m+1, token, "SCONST", token);
                         }else if (isfloat){
                         	list.insert(m+1, token, "FCONST", token);
+                        }else if (isOctNum){
+                        	list.insert(m+1, token, "OCONST", token);
+                        }else if (isHexNum){
+                        	list.insert(m+1, token, "HCONST", token);
                         }else{
                         	list.insert(m+1, token, "CONST", token);
                         }  
@@ -148,7 +182,7 @@ public class Lexer {
                         if (flag == false)
                         	break;
                     }if (state != 3){
-                    	list.insert(m+1, token, "String error","ERROR");
+                    	list.insert(m+1, token, "Char error","ERROR");
                         i--;  
                     }else{  
                     	if (constant.isEmpty() 
@@ -204,7 +238,7 @@ public class Lexer {
                     	list.insert(m+1, str1, "STRCONST", str1);
                     }  
                     token = "";
-                //注释
+                //注释或者/=
 				}else if (ch == '/'){
 					token += ch;  
                     i++;
@@ -274,7 +308,7 @@ public class Lexer {
                     	}
                     	token = "";
                     }
-                //运算符
+                //运算符或者分隔符
 				}else if (TokenRec.isOperator(String.valueOf(ch)) 
 						|| TokenRec.isDelimiter(String.valueOf(ch))){  
 					token += ch; 						
