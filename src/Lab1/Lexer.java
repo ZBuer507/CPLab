@@ -101,7 +101,7 @@ public class Lexer {
                     		isHexNum = true;
                     		haveMistake = false;
                     	}
-                    	System.out.println(TokenRec.digitCheck[state]);
+                    	//System.out.println(TokenRec.digitCheck[state]);
                         for (k = 0; k <= 6; k++){
                             char tmpstr[] = TokenRec.digitCheck[state].toCharArray();
                             if (ch != '#' && TokenRec.is_digit_state(ch, tmpstr[k], isHexNum) == 1){
