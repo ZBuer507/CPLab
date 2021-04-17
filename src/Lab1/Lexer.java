@@ -29,25 +29,21 @@ public class Lexer {
 		for(int m = 0; m < texts.length; m++){
 			String str = texts[m];
 			//空行跳过
-			if (str.equals(""))
-				continue;
+			if (str.equals("")) continue;
 			char[] strline = str.toCharArray();
 			for(int i = 0; i < strline.length; i++) {
 				char ch = strline[i];
-				char ch0 = '0';
+				char ch0 = ' ';
 				if(i > 1) ch0 = strline[i-1];
 				//遇到空格视为新的串
-				if (ch == ' ')
-					continue;
+				if (ch == ' ') continue;
 				String token = "";
 				//标识符和关键字
 				if (TokenRec.isAlpha(ch)){
-                    while (ch != '\0'
-                    		&& (TokenRec.isAlpha(ch) || TokenRec.isDigit(ch))){
+                    while (ch != '\0' && (TokenRec.isAlpha(ch) || TokenRec.isDigit(ch))){
                         token += ch;  
                         i++;  
-                        if(i >= strline.length) 
-                        	break;  
+                        if(i >= strline.length) break;  
                         ch = strline[i];  
                     }
                     i--;
@@ -56,8 +52,7 @@ public class Lexer {
                         list.insert(m+1, token, token.toUpperCase(), "-");
                     }else{
                     	//标识符
-                    	if (symbol.isEmpty() 
-                    			|| (!symbol.isEmpty() && !symbol.containsKey(token))){
+                    	if (symbol.isEmpty() || (!symbol.isEmpty() && !symbol.containsKey(token))){
                             symbol.put(token, symbol_pos);   
                             symbol_pos++;
                         }
@@ -84,7 +79,7 @@ public class Lexer {
                     	if (!isHexNum && !TokenRec.isDigit(ch) 
                     			&& ch != 'e' && ch != 'E' && ch != '+' && ch != '-')
                     		haveMistake = true;
-                    	if (ch == '.' && !isOctNum && !isHexNum) {
+                    	if (ch == '.') {
                     		isfloat = true;
                     		haveMistake = false;
                     	}
@@ -106,26 +101,25 @@ public class Lexer {
                     		isHexNum = true;
                     		haveMistake = false;
                     	}
+                    	System.out.println(TokenRec.digitCheck[state]);
                         for (k = 0; k <= 6; k++){
-                            char tmpstr[] = TokenRec.digitDFA[state].toCharArray();
+                            char tmpstr[] = TokenRec.digitCheck[state].toCharArray();
                             if (ch != '#' && TokenRec.is_digit_state(ch, tmpstr[k], isHexNum) == 1){
                                 token += ch;
                                 state = k;
                                 break;
                             }
                         }
-                        if (k > 6)
-                        	break;
+                        if (k > 6) break;
                         i++;
-                        if (i >= strline.length)
-                        	break;
+                        if (i >= strline.length) break;
                         ch = strline[i];
                     }
                     
                     if (state == 2 || state == 4 || state == 5){  
                         haveMistake = true;  
                     }else{  
-                        if ((ch == '.') || (!TokenRec.isOperator(String.valueOf(ch)) 
+                        if ((ch == '.') || (!TokenRec.isOperator(String.valueOf(ch))//返回字符串
                         		&& !TokenRec.isDigit(ch) 
                         		&& !TokenRec.isDelimiter(String.valueOf(ch))
                         		&& ch != ' ')) 
@@ -135,28 +129,22 @@ public class Lexer {
                     	while (ch != '\0' && ch != ',' && ch != ';' && ch != ' '){  
                             token += ch;  
                             i++;
-                            if (i >= strline.length) 
-                            	break;  
-                            ch = strline[i];  
+                            if (i >= strline.length) break;  
+                            ch = strline[i];
+                            if(i > 1) ch0 = strline[i-1];
                         }
-                    	list.insert(m+1, token, "error", "ERROR");
+                    	list.insert(m+1, token, "Error", "ERROR");
                     }else{  
                     	if (constant.isEmpty() 
                     			|| (!constant.isEmpty() && !constant.containsKey(token))){  
                     		constant.put(token, constant_pos);   
                             constant_pos++;
                         }
-                    	if (isSciNum){
-                    		list.insert(m+1, token, "SCONST", token);
-                        }else if (isfloat){
-                        	list.insert(m+1, token, "FCONST", token);
-                        }else if (isOctNum){
-                        	list.insert(m+1, token, "OCONST", token);
-                        }else if (isHexNum){
-                        	list.insert(m+1, token, "HCONST", token);
-                        }else{
-                        	list.insert(m+1, token, "CONST", token);
-                        }  
+                    	if (isSciNum) list.insert(m+1, token, "SCONST", token);
+                        else if (isfloat) list.insert(m+1, token, "FCONST", token);
+                        else if (isOctNum) list.insert(m+1, token, "OCONST", token);
+                        else if (isHexNum) list.insert(m+1, token, "HCONST", token);
+                        else list.insert(m+1, token, "CONST", token);
                     }
                     i--;
                     token = "";
@@ -166,12 +154,11 @@ public class Lexer {
                     token += ch;                    
                     while (state != 3){  
                         i++;
-                        if (i >= strline.length) 
-                        	break;
+                        if (i >= strline.length) break;
                         ch = strline[i]; 
                         Boolean flag = false;
                         for (int k = 0; k < 4; k++){  
-                            char tmpstr[] = TokenRec.charDFA[state].toCharArray();  
+                            char tmpstr[] = TokenRec.charCheck[state].toCharArray();  
                             if (TokenRec.is_char_state(ch, tmpstr[k])){            
                                 token += ch;
                                 state = k; 
@@ -179,9 +166,9 @@ public class Lexer {
                                 break;  
                             }  
                         }  
-                        if (flag == false)
-                        	break;
-                    }if (state != 3){
+                        if (flag == false) break;
+                    }
+                    if (state != 3){
                     	list.insert(m+1, token, "Char error","ERROR");
                         i--;  
                     }else{  
@@ -211,14 +198,12 @@ public class Lexer {
                             break;  
                         }
                         for (int k = 0; k < 4; k++){  
-                            char tmpstr[] = TokenRec.stringDFA[state].toCharArray();  
+                            char tmpstr[] = TokenRec.stringCheck[state].toCharArray();  
                             if (TokenRec.is_string_state(ch, tmpstr[k])){
                             	str1 += ch;  
                                 if (k == 2 && state == 1){  
-                                    if (TokenRec.isEsSt(ch))
-                                        token = token + '\\' + ch;  
-                                    else  
-                                        token += ch;  
+                                    if (TokenRec.isEsSt(ch)) token = token + '\\' + ch;  
+                                    else token += ch;  
                                 }else if (k != 3 && k != 1)  
                                     token += ch;  
                                 state = k;  
@@ -227,7 +212,7 @@ public class Lexer {
                         }  
                     }
                     if (haveMistake){
-                    	list.insert(m+1, str1, "String error", "-");
+                    	list.insert(m+1, str1, "String error", "ERROR");
                         i--;  
                     }else{  
                     	if (constant.isEmpty() 
@@ -242,15 +227,11 @@ public class Lexer {
 				}else if (ch == '/'){
 					token += ch;  
                     i++;
-                    if (i>=strline.length) 
-                    	break;  
+                    if (i>=strline.length) break;  
                     ch = strline[i];
-                    
                     if (ch != '*' && ch != '/'){  
-                        if (ch == '=')  
-                            token += ch;
-                        else
-                            i--;
+                        if (ch == '=') token += ch;
+                        else i--;
                         list.insert(m+1, token, "OP", token);
                         token = "";  
                     }else{
@@ -258,8 +239,7 @@ public class Lexer {
                     	int State = 0;
                     	if (ch == '*'){
                     		token += ch;  
-                            int state = 2;  
-
+                            int state = 2;
                             while (state != 4){                                      
                                 if (i == strline.length-1){  
                                 	token += '\n';  
@@ -269,8 +249,7 @@ public class Lexer {
                                         break;  
                                 	}
                             		str = texts[m];
-                            		if (str.equals(""))
-                            			continue;
+                            		if (str.equals("")) continue;
                             		else{
                             			strline = str.toCharArray();
                             			i=0;
@@ -280,9 +259,8 @@ public class Lexer {
                                 	i++;
                                     ch = strline[i];
                                 }
-                           
                                 for (int k = 2; k <= 4; k++){  
-                                    char tmpstr[] = TokenRec.noteDFA[state].toCharArray();  
+                                    char tmpstr[] = TokenRec.noteCheck[state].toCharArray();  
                                     if (TokenRec.is_note_state(ch, tmpstr[k], state)){
                                         token += ch;  
                                         state = k;  
@@ -314,31 +292,26 @@ public class Lexer {
 					token += ch; 						
                     if (TokenRec.isPlusEqu(ch)){  
                         i++;
-                        if (i>=strline.length) 
-                        	break;  
+                        if (i>=strline.length) break;  
                         ch = strline[i];  
-                        if (ch == '=')  
-                            token += ch;  
+                        if (ch == '=') token += ch;  
                         else{                              	
-                        	if (TokenRec.isPlusSame(strline[i-1]) && ch == strline[i-1])
-                                token += ch;  
-                            else  
-                                i--;   
+                        	if (TokenRec.isPlusSame(strline[i-1]) && ch == strline[i-1]) token += ch;  
+                            else i--;   
                         }  
                     }                  
                     if(token.length() == 1){
                     	String signal = token;
-                    	if(TokenRec.isDelimiter(signal))
-                    		list.insert(m+1, token,TokenRec.getName(token), "-");
-                    	else
-                    		list.insert(m+1, token, "OP", token);
+                    	if(TokenRec.isDelimiter(signal)) list.insert(m+1, token,TokenRec.getName(token), "-");
+                    	else list.insert(m+1, token, "OP", token);
                     }else list.insert(m+1, token, "OP", token);
                     token = "";
                 //未知符号
                 }else{  
                     if(ch != ' ' && ch != '\t' && ch != '\0' && ch != '\n' && ch != '\r'){
-                    	list.insert(m+1, token, "Unknown char", "-");
-                        System.out.println(ch);
+                    	token += ch;
+                    	list.insert(m+1, token, "Unknown expression", "ERROR");
+                        token = "";
                     }  
                 }				
 			}

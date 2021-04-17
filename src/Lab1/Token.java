@@ -24,17 +24,16 @@ public class Token {
 	public String print() {
 		String str;
 		if(this.str3.equals("ERROR")) {
-			str ="Lexical error at Line" + this.line + ":\t" + 
-					this.str1.replace("\r\n", "\\r\\n") + "\n\t" + 
-					this.str2.replace("\r\n", "\\r\\n") + "\n\t" + 
-					this.str3.replace("\r\n", "\\r\\n") + "\n";
+			str ="Lexical error at Line" + this.line + ":\"" + 
+					this.str1.replace("\r\n", "\\r\\n") + "\" " + 
+					this.str2.replace("\r\n", "\\r\\n") + "\n";
 			System.out.print(str);
 		}else {
 			str ="Line" + this.line + ":\t" + 
-				this.str1.replace("\r\n", "\\r\\n") + "\n\t" + 
-				this.str2.replace("\r\n", "\\r\\n") + "\n\t" + 
-				this.str3.replace("\r\n", "\\r\\n") + "\n";
-			System.out.print(str);
+				this.str1.replace("\r\n", "\\r\\n") + "\t<\t" + 
+				this.str2.replace("\r\n", "\\r\\n") + "\t,\t" + 
+				this.str3.replace("\r\n", "\\r\\n") + "\t>\n";
+			//System.out.print(str);
 		}
 		return str;
 	}

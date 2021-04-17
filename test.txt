@@ -1,5 +1,5 @@
 //line1
-float a = 1.22;
+float a = 0.22;
 float b = 2.32e+1;
 float c = 22.3E-1;
 int d = 22E1;

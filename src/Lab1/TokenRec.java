@@ -72,10 +72,12 @@ public class TokenRec {
 	}
 	
 	//识别不同类型字符
+	//可跟=
 	public static Boolean isPlusEqu(char ch){  
         return ch == '+' || ch == '-' || ch == '*' || ch == '/' || ch == '=' || ch == '>' 
         		|| ch == '<' || ch == '&' || ch == '|'  || ch == '^' || ch == '%' || ch == '!' ;  
     }
+	//可跟相同运算符
 	public static Boolean isPlusSame(char ch){  
         return ch == '+' || ch == '-' || ch == '&' || ch == '|' || ch == '>' || ch == '<';  
     }
@@ -93,41 +95,23 @@ public class TokenRec {
         		||(ch >= 'A' && ch <= 'F') || ch == 'x' || ch == 'X';
     }
 	
-	// String DFA : a代表任意字符，b代表除\和"之外的字符
-	public static String stringDFA[] = { 
-		"#\\b#",
-		"##a#",
-		"#\\b\"",
-		"####"
-	};
+	// String Check : a代表任意字符，b代表除\和"之外的字符
+	public static String stringCheck[] = {"#\\b#", "##a#", "#\\b\"", "####"};
 	public static Boolean is_string_state(char ch, char key){  
-        if (key == 'a')  
-            return true;  
-        if (key == '\\')  
-            return ch == key;  
-        if (key == '"')  
-            return ch == key;  
-        if (key == 'b')  
-            return ch != '\\' && ch != '"';  
+        if (key == 'a') return true;  
+        if (key == '\\') return ch == key;  
+        if (key == '"') return ch == key;  
+        if (key == 'b') return ch != '\\' && ch != '"';  
         return false;  
     }
 	
-	// char DFA : a代表任意字符，b代表除\和'之外的字符
-	public static String charDFA[] = {
-		"#\\b#", 
-		"##a#", 
-		"###\'", 
-		"####"
-	}; 
+	// char Check : a代表任意字符，b代表除\和'之外的字符
+	public static String charCheck[] = {"#\\b#", "##a#", "###\'","####"}; 
 	public static Boolean is_char_state(char ch, char key){  
-        if (key == 'a')  
-            return true;  
-        if (key == '\\')  
-            return ch == key;  
-        if (key == '\'')  
-            return ch == key;  
-        if (key == 'b')  
-            return ch != '\\' && ch != '\'';  
+        if (key == 'a') return true;  
+        if (key == '\\') return ch == key;  
+        if (key == '\'') return ch == key;  
+        if (key == 'b') return ch != '\\' && ch != '\'';  
         return false;  
     }
 	public static Boolean isEsSt(char ch){  
@@ -135,62 +119,35 @@ public class TokenRec {
                 || ch == 't' || ch == 'v' || ch == '?' || ch == '0';  
     }
 	
-	//识别数字的DFA
-	public static String digitDFA[] = {
-		"#d#####",
-		"#d.#e##",
-		"###d###",
-		"###de##",
-		"#####-d",
-		"######d",
-		"######d",
-	};
+	//识别数字的Check
+	public static String digitCheck[] = {"#d#####", "#d.#e##", "###d###", "###de##", "#####-d", "######d", "######d"};
 	public static int is_digit_state(char ch, char test, Boolean isHex) { 
         if (test == 'd')
-        	if (isHex && isHexDigit(ch))
-        		return 1; 
-        	else if (isDigit(ch))  
-                return 1;  
-            else  
-                return 0;  
+        	if (isHex && isHexDigit(ch)) return 1; 
+        	else if (isDigit(ch)) return 1;  
+            else return 0;  
         else if (test == '-')
-        	if (ch == '-' || ch == '+')
-        		return 1;
-        	else
-        		return 0;
+        	if (ch == '-' || ch == '+') return 1;
+        	else return 0;
         else if (test == 'e')
-        	if (ch == 'e' || ch == 'E')
-        		return 1;
-        	else
-        		return 0;
+        	if (ch == 'e' || ch == 'E') return 1;
+        	else return 0;
         else
-        	if (ch == test)
-        		return 1;
-        	else
-        		return 0;
+        	if (ch == test) return 1;
+        	else return 0;
     }
 	
-	//识别注释的DFA
-	public static String noteDFA[] = {
-			"#/###",
-			"##*##",
-			"##c*#",
-			"##c*/",
-			"#####",
-	};
+	//识别注释的Check
+	public static String noteCheck[] = {"#/###", "##*##", "##c*#", "##c*/", "#####"};
 	public static Boolean is_note_state(char ch, char nD, int s){  
         if (s == 2)
             if (nD == 'c')
-                if (ch != '*') 
-                	return true;  
-                else 
-                	return false;
+                if (ch != '*') return true;  
+                else return false;
         if (s == 3)
             if (nD == 'c')
-                if (ch != '*' && ch != '/') 
-                	return true;
-                else 
-                	return false;
+                if (ch != '*' && ch != '/') return true;
+                else return false;
         return (ch == nD) ? true : false;  
     }
 }
