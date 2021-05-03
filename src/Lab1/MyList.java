@@ -43,4 +43,21 @@ public class MyList {
 			strList += token.print();
 		return strList;
 	}
+	
+	public String printError() {
+		String strList = "";
+		if(isEmpty()){
+            System.out.print("Empty");
+            return "Empty";
+        }
+		System.out.println(this.len);
+		for(Token token : this.tokenList)
+			if(token.printError() != null)
+				strList += token.printError();
+		return strList;
+	}
+	
+	public Token get(int n) {
+		return this.tokenList.get(n);
+	}
 }

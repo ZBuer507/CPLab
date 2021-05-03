@@ -10,6 +10,7 @@ public class Main{
 	public Main(){
 		String filename = "test.txt";
 		String filename2 = "lexer.out";
+		String filename3 = "error.out";
 		File file = new File(filename);
 		
 		String text = "";
@@ -34,6 +35,15 @@ public class Main{
 			file2 = new FileWriter(filename2);
 			file2.write(list.print());
 			file2.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		FileWriter file3;
+		try {
+			file3 = new FileWriter(filename3);
+			file3.write(list.printError());
+			file3.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

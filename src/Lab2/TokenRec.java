@@ -1,4 +1,4 @@
-package Lab1;
+package Lab2;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -6,12 +6,8 @@ import java.util.Map;
 public class TokenRec {
 	//关键词
 	private static String keywords[] = {
-			"auto", 	"double", 	"int", 		"struct",  	"enum",		"float",
-	        "break", 	"else", 	"long", 	"switch", 	"case",  	"register",  
-	        "typedef", 	"char", 	"extern", 	"return", 	"union", 	"const",   
-	        "short", 	"unsigned",	"continue",	"for", 		"signed", 	"void",  
-	        "default", 	"goto", 	"sizeof", 	"volatile", "do", 		"if", 
-	        "while",  	"static", 	"String"};
+			"proc", "record", "integer", "real",  "and", "or", "not",
+	        "if", "else", "then", "while", "do", "call", "true", "false"};
 	public static Map<String, Integer> keywords_code = new HashMap<String, Integer>(){
 		private static final long serialVersionUID = 1L;{
 			for (int i = 0; i < keywords.length; i++)
@@ -22,8 +18,7 @@ public class TokenRec {
         return keywords_code.containsKey(s);  
     }
 	//运算符
-	private static String operator[] = {"+", "-", "*", "/", "!", "%", "~", "&", "|", "^", "=",
-			"++", "--", "&&", "||", "<=", "!=", "==", ">=", "+=", "-=", "*=", "/="};
+	private static String operator[] = {"+", "-", "*", "<", "<=", ">", ">=", "==", "!="};
 	@SuppressWarnings("serial")
 	public static Map<String, Integer> operator_code = new HashMap<String, Integer>(){
 		{
@@ -35,7 +30,7 @@ public class TokenRec {
 		return operator_code.containsKey(s);
     }
 	//界符
-	private static String delimiter[] = {",", "(", ")", "{", "}", ";", "<", ">", "#", "[", "]", "."};
+	private static String delimiter[] = {",", ";", "[", "]", "(", ")","="};
 	@SuppressWarnings("serial")
 	public static Map<String, Integer> delimiter_code = new HashMap<String, Integer>(){
 		{
@@ -76,13 +71,13 @@ public class TokenRec {
 	//识别不同类型字符
 	//可跟=
 	public static Boolean isPlusEqu(char ch){  
-        return ch == '+' || ch == '-' || ch == '*' || ch == '/' || ch == '=' || ch == '>' 
-        		|| ch == '<' || ch == '&' || ch == '|'  || ch == '^' || ch == '%' || ch == '!' ;  
+        return ch == '=' || ch == '>' || ch == '<' || ch == '!' ;  
     }
+	/*
 	//可跟相同运算符
 	public static Boolean isPlusSame(char ch){  
         return ch == '+' || ch == '-' || ch == '&' || ch == '|' || ch == '>' || ch == '<';  
-    }
+    }*/
 	public static Boolean isAlpha(char ch){
 	    return ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') || ch == '_');
 	}

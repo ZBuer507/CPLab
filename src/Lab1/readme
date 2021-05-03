@@ -1,0 +1,8 @@
+主函数在Main.java
+正常java编译即可
+读取的文件需要与Lexer.jar同一目录下
+生成的文件为lexer.out，错误报告在error.out
+命令行如下（需要cd到项目目录）：
+javac -d . Main.java Lexer.java TokenRec.java MyList.java Token.java
+jar cvf Lexer.jar Lab1
+java -cp .;Lexer.java Lab1.Main

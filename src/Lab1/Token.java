@@ -1,6 +1,8 @@
 package Lab1;
 
 import java.lang.String;
+import java.util.ArrayList;
+import java.util.List;
 
 //”√¿¥¥Ê¥¢token
 public class Token {
@@ -8,6 +10,7 @@ public class Token {
 	public String str1;
 	public String str2;
 	public String str3;
+	public List<Token> children = new ArrayList<Token>();
 	
 	public Token() {
 		this.line = 0;
@@ -24,10 +27,10 @@ public class Token {
 	public String print() {
 		String str;
 		if(this.str3.equals("ERROR")) {
-			str ="Lexical error at Line" + this.line + ":\"" + 
+			str ="Lexical error at Line" + this.line + "\t:\"" + 
 					this.str1.replace("\r\n", "\\r\\n") + "\" " + 
 					this.str2.replace("\r\n", "\\r\\n") + "\n";
-			System.out.print(str);
+			//System.out.print(str);
 		}else {
 			str ="Line" + this.line + ":\t" + 
 				this.str1.replace("\r\n", "\\r\\n") + "\t<\t" + 
@@ -36,5 +39,21 @@ public class Token {
 			//System.out.print(str);
 		}
 		return str;
+	}
+	
+	public String printError() {
+		String str;
+		if(this.str3.equals("ERROR")) {
+			str ="Lexical error at Line" + this.line + "\t:\"" + 
+					this.str1.replace("\r\n", "\\r\\n") + "\" " + 
+					this.str2.replace("\r\n", "\\r\\n") + "\n";
+			return str;
+		}else {
+			str ="Line" + this.line + ":\t" + 
+				this.str1.replace("\r\n", "\\r\\n") + "\t<\t" + 
+				this.str2.replace("\r\n", "\\r\\n") + "\t,\t" + 
+				this.str3.replace("\r\n", "\\r\\n") + "\t>\n";
+			return null;
+		}
 	}
 }

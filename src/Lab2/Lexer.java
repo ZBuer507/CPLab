@@ -1,13 +1,14 @@
-package Lab1;
+package Lab2;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 //词法分析器
 public class Lexer {
 	private String text;
-	private MyList list;
-	public Lexer(String text, MyList list){
+	private ArrayList<Token> list;
+	public Lexer(String text, ArrayList<Token> list){
 		this.text = text;
 		this.list = list;
 	}
@@ -18,7 +19,7 @@ public class Lexer {
 	//常量表
 	public static Map<String, Integer> constant = new HashMap<String, Integer>();
 	
-	public MyList getList() {
+	public ArrayList<Token> getList() {
 		return this.list;
 	}
 	
@@ -53,14 +54,14 @@ public class Lexer {
                     i--;
                     //关键字
                     if (TokenRec.isKeyword(token)){  
-                        list.insert(m+1, token, token.toUpperCase(), "-");
+                        list.add(new Token(m+1, token, TokenRec.keywords_code.get(token)));
                     }else{
                     	//标识符
                     	if (symbol.isEmpty() || (!symbol.isEmpty() && !symbol.containsKey(token))){
                             symbol.put(token, symbol_pos);   
                             symbol_pos++;
                         }
-                    	list.insert(m+1, token, "IDN", token);
+                    	list.add(new Token(m+1, token, 1));
                     }
                     token = "";
                 //数字
@@ -137,18 +138,18 @@ public class Lexer {
                             ch = strline[i];
                             if(i > 1) ch0 = strline[i-1];
                         }
-                    	list.insert(m+1, token, "Error", "ERROR");
+                    	list.add(new Token(m+1, token, 10000));
                     }else{  
                     	if (constant.isEmpty() 
                     			|| (!constant.isEmpty() && !constant.containsKey(token))){  
                     		constant.put(token, constant_pos);   
                             constant_pos++;
                         }
-                    	if (isSciNum) list.insert(m+1, token, "SCONST", token);
-                        else if (isfloat) list.insert(m+1, token, "FCONST", token);
-                        else if (isOctNum) list.insert(m+1, token, "OCONST", token);
-                        else if (isHexNum) list.insert(m+1, token, "HCONST", token);
-                        else list.insert(m+1, token, "ICONST", token);
+                    	if (isSciNum) list.add(new Token(m+1, token, 3));
+                        else if (isfloat) list.add(new Token(m+1, token, 3));
+                        else if (isOctNum) list.add(new Token(m+1, token, 3));
+                        else if (isHexNum) list.add(new Token(m+1, token, 3));
+                        else list.add(new Token(m+1, token, 2));
                     }
                     i--;
                     token = "";
@@ -173,7 +174,7 @@ public class Lexer {
                         if (flag == false) break;
                     }
                     if (state != 3){
-                    	list.insert(m+1, token, "Char error","ERROR");
+                    	list.add(new Token(m+1, token, 1001));
                         i--;  
                     }else{  
                     	if (constant.isEmpty() 
@@ -181,7 +182,7 @@ public class Lexer {
                     		constant.put(token, constant_pos);   
                             constant_pos++;
                         }
-                    	list.insert(m+1, token, "CCONST", token);
+                    	list.add(new Token(m+1, token, 5));
                     }
                     token = "";
                 //字符串
@@ -216,7 +217,7 @@ public class Lexer {
                         }  
                     }
                     if (haveMistake){
-                    	list.insert(m+1, str1, "String error", "ERROR");
+                    	list.add(new Token(m+1, str1, 1002));
                         i--;  
                     }else{  
                     	if (constant.isEmpty() 
@@ -224,7 +225,7 @@ public class Lexer {
                     		constant.put(token, constant_pos);   
                             constant_pos++;
                         }
-                    	list.insert(m+1, str1, "STRCONST", str1);
+                    	list.add(new Token(m+1, str1, 6));
                     }  
                     token = "";
                 //注释或者/=
@@ -236,7 +237,7 @@ public class Lexer {
                     if (ch != '*' && ch != '/'){  
                         if (ch == '=') token += ch;
                         else i--;
-                        list.insert(m+1, token, "OP", token);
+                        list.add(new Token(m+1, token, TokenRec.operator_code.get(token)));
                         token = "";  
                     }else{
                     	Boolean haveMistake = false;
@@ -283,10 +284,11 @@ public class Lexer {
                             State = 4;
                     	}
                     	if(haveMistake || State != 4){
-                    		list.insert(m+1, token, "Note error","ERROR");
+                    		list.add(new Token(m+1, token, 1003));
                             --i;
                     	}else{
-                    		list.insert(m+1, token, "Note","-");
+                    		//System.out.println(token);
+                    		list.add(new Token(m+1, token, 7));
                     	}
                     	token = "";
                     }
@@ -299,22 +301,19 @@ public class Lexer {
                         if (i>=strline.length) break;  
                         ch = strline[i];  
                         if (ch == '=') token += ch;  
-                        else{                              	
-                        	if (TokenRec.isPlusSame(strline[i-1]) && ch == strline[i-1]) token += ch;  
-                            else i--;   
-                        }  
+                        else i--;
                     }                  
                     if(token.length() == 1){
                     	String signal = token;
-                    	if(TokenRec.isDelimiter(signal)) list.insert(m+1, token,TokenRec.getName(token), "-");
-                    	else list.insert(m+1, token, "OP", token);
-                    }else list.insert(m+1, token, "OP", token);
+                    	if(TokenRec.isDelimiter(signal)) list.add(new Token(m+1, token, TokenRec.delimiter_code.get(token)));
+                    	else list.add(new Token(m+1, token, TokenRec.operator_code.get(token)));
+                    }else list.add(new Token(m+1, token, TokenRec.operator_code.get(token)));
                     token = "";
                 //未知符号
                 }else{  
                     if(ch != ' ' && ch != '\t' && ch != '\0' && ch != '\n' && ch != '\r'){
                     	token += ch;
-                    	list.insert(m+1, token, "Unknown expression", "ERROR");
+                    	list.add(new Token(m+1, token, 1004));
                         token = "";
                     }  
                 }				

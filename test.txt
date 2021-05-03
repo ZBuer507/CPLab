@@ -3,8 +3,9 @@ float a = 0.22;
 float b = 2.32e+1;
 float c = 22.3E-1;
 int d = 22E1;
-int e = 0x9af;
-int f = 0666;
+int hex = 0x9af;
+int oct = 0666;
+char ch = 'c';
 String name = "ZhengJiaTao";
 /*
 line1
@@ -12,7 +13,8 @@ line2
 */
 
 /* note */
-void function(int *node) 
+
+void function(int node) 
 {
     for (int i = 0; i < n-1; i++)
 		node[i]=0;
@@ -20,25 +22,25 @@ void function(int *node)
 
 int main() 
 {
-    int arr[] = [1,2,3,4,5];
-    function(arr);
+    int arr[] = {{1,2}, {3,4}, {5,6}};
+    function(arr[0]);
     return 0;
-}
-while(num != 100)
-{
-    num++;
+    while(num != 100)
+	{
+	    num++;
+	}
 }
 
+
 /* bug test */
-int 1_bug = 3;
+int 12_bug = 3;
 float bug1 = 1.1.1;
 float bug2 = 2..2;
-float bug3 = .;
-int bug4 = 0xag;
-int bug5 = 099;
-char bug6 = 'a;
-String bug7 = "bianyiyuanli;
-/*bug8
+int bug3 = 0xag;
+int bug4 = 099;
+char bug5 = 'a;
+String bug6 = "bianyiyuanli;
+/*bug7
 
 
 
