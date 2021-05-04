@@ -145,7 +145,7 @@ public class SyntaxParser{
 			}else if(action.startsWith("r")){
 				Production derivation = Pretreat.F.get(Integer.parseInt(action.substring(1)));
 				//查找对应的产生式，产生式类型由左部和右部构成
-				//System.out.println(derivation);
+				System.out.println(derivation);
 				int r = derivation.list.size();
 				index--;
 				Token temptoken = new Token(token.line,derivation.left,-10);
