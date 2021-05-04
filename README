@@ -1,11 +1,11 @@
 Edited by JiataoZheng
 Version 2.0.11 2021/5/5
-Lab1/Token:	contain string of token
-Lab1/MyList:	contain tokens
-Lab1/TokenRec:	recognize token
-Lab1/Lexer:	lexical analyzer; output as lexer.out
+src/Lab1/Token:	contain string of token
+src/Lab1/MyList:	contain tokens
+src/Lab1/TokenRec:	recognize token
+src/Lab1/Lexer:	lexical analyzer; output as lexer.out
 
-Lab2/LR*	generate LRtable.bin; output Sets and Table
-Lab2/Pretreat Production	analyze Productions.txt
-Lab2/SynaxParser	as it's name says; output as parser.out and parser_errer.out
-
+src/Lab2/LR*	generate LRtable.bin; output Sets and Table
+src/Lab2/Pretreat Production	analyze Productions.txt
+src/Lab2/SynaxParser	as it's name says; output as parser.out and parser_errer.out
+data	cantains Lab2 files

@@ -7,7 +7,7 @@ int fun(int n){
 }
 
 struct str{
-   float f1 = 0;
+   float f1 = 0.5;
    int i1 = 1;
 } st;
 
