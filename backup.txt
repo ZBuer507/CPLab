@@ -1,0 +1,55 @@
+P'-> P
+
+P -> D						
+P -> S							
+S -> S S				
+
+D -> D D | proc id ; D S | T id ; 		
+T -> X C | record D 			
+X -> integer | real				
+C -> [ num ] C | ¦Å 	
+
+
+S -> id = E ; | L = E ;
+E -> E + E | E * E | - E | ( E ) | id | digit | L
+L -> id [ E ] | L [ E ]
+
+				
+S -> if B then S | if B then S else S | while B do S
+
+B -> B or B | B and B | not B | ( B ) | E relop E | true | false	
+	
+relop -> < | <= | == | != | > | >=		
+
+
+S -> call id ( Elist )	
+Elist -> Elist , E						
+Elist -> E	
+
+
+
+/*
+demo
+*/
+record
+	integer i;
+	real j;
+demo1;
+
+proc demo2;
+	integer [11][12] j;
+	j[5][6] = 10;
+	j[7][6] = j[5][6] + 10;
+	j[8][6] = 1 + 2 * 3;
+//demo3
+if (i < 10) and (j >= 100) then
+	i = 10;
+else
+	i = 1;
+//demo4
+while true do
+	i = i + 1;
+//demo5
+call demo2(i)
+//bugs
+bug1 += 1;

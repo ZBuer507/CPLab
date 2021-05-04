@@ -6,8 +6,13 @@ import java.util.Map;
 public class TokenRec {
 	//¹Ø¼ü´Ê
 	private static String keywords[] = {
+			/*
 			"proc", "record", "integer", "real",  "and", "or", "not",
-	        "if", "else", "then", "while", "do", "call", "true", "false"};
+	        "if", "else", "then", "while", "do", "call", "true", "false"
+	        */
+			"int", "float",  "struct", "return",
+	        "if", "else", "while"
+	        };
 	public static Map<String, Integer> keywords_code = new HashMap<String, Integer>(){
 		private static final long serialVersionUID = 1L;{
 			for (int i = 0; i < keywords.length; i++)
@@ -18,7 +23,7 @@ public class TokenRec {
         return keywords_code.containsKey(s);  
     }
 	//ÔËËã·û
-	private static String operator[] = {"+", "-", "*", "<", "<=", ">", ">=", "==", "!="};
+	private static String operator[] = {"!","/","+", "-", "*", "<", "<=", ">", ">=", "==", "!=", "||", "&&"};
 	@SuppressWarnings("serial")
 	public static Map<String, Integer> operator_code = new HashMap<String, Integer>(){
 		{
@@ -30,7 +35,7 @@ public class TokenRec {
 		return operator_code.containsKey(s);
     }
 	//½ç·û
-	private static String delimiter[] = {",", ";", "[", "]", "(", ")","="};
+	private static String delimiter[] = {",", ";", "[", "]", "(", ")","{","}",".","="};
 	@SuppressWarnings("serial")
 	public static Map<String, Integer> delimiter_code = new HashMap<String, Integer>(){
 		{

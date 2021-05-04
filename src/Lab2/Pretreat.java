@@ -18,7 +18,7 @@ public class Pretreat{
 	public static HashMap<String,TreeSet<String> > firstMap = new HashMap<String,TreeSet<String>>();
 	//在类被加载的时候运行此段代码
 	static{
-		// 从文件中读取文法，添加相应的产生式
+		//读取文法，添加产生式
 		try{
 			read("data/Productions.txt");
 		}catch (FileNotFoundException e){
@@ -26,18 +26,30 @@ public class Pretreat{
 		}
 
 		// 添加非终结符
-		VN.add("P'");  VN.add("P");   VN.add("D");   VN.add("S");   VN.add("T");  
-		VN.add("X");   VN.add("C");   VN.add("E");  
-		VN.add("S1");  VN.add("S2");  VN.add("L");   VN.add("B");
-		VN.add("relop");   VN.add("Elist");
+		VN.add("P'");	VN.add("P");  VN.add("SEMI");   VN.add("COMMA");   VN.add("ASSIGNOP"); 
+		VN.add("RELOP");	VN.add("PLUS");	VN.add("MINUS");	VN.add("STAR");
+		VN.add("DIV");	VN.add("AND");	VN.add("OR");	VN.add("DOT");
+		VN.add("NOT");	VN.add("TYPE");	VN.add("LP");	VN.add("RP");
+		VN.add("LB");	VN.add("RB");	VN.add("LC");	VN.add("RC");
+		VN.add("STRUCT");VN.add("RETURN");	VN.add("IF");	VN.add("ELSE");
+		VN.add("WHILE");	VN.add("Program");	VN.add("ExtDefList");
+		VN.add("ExtDef");	VN.add("Specifier");	VN.add("FunDec");
+		VN.add("CompSt");	VN.add("VarDec");	VN.add("StructSpecifier");
+		VN.add("OptTag");	VN.add("Tag");	VN.add("VarList");	VN.add("ParamDec");
+		VN.add("StmtList");	VN.add("Stmt");	VN.add("Exp");
+		VN.add("DefList");	VN.add("Def");	VN.add("Dec");
+		VN.add("Args");	VN.add("ExtDecList");	VN.add("DecList");
 		// 添加终结符
-		VT.add("proc");  VT.add("id");    VT.add(";");     VT.add("record"); VT.add("integer");	VT.add("digit");
-		VT.add("real");  VT.add("[");     VT.add("]");     VT.add("num");    VT.add("=");  
-		VT.add("+");     VT.add("*");     VT.add("-");     VT.add("(");      VT.add(")");  
-		VT.add("if");    VT.add("then");  VT.add("else");  VT.add("while");  VT.add("do");    
-		VT.add("or");     VT.add("and");  VT.add("not");   VT.add("true");   VT.add("false"); 
+		VT.add(";");
+		VT.add("int");	VT.add("float");	VT.add("struct");	VT.add("return");
+		VT.add("ID");	VT.add("INT");	VT.add("FLOAT");
+		VT.add("[");     VT.add("]");     VT.add("num");    VT.add("=");  
+		VT.add("+");     VT.add("/");	VT.add("*");     VT.add("-");
+		VT.add("(");      VT.add(")");  
+		VT.add("if");    VT.add("else");  VT.add("while");
 		VT.add("<");      VT.add("<=");   VT.add("==");    VT.add("!=");     VT.add(">");     
-		VT.add(">=");     VT.add("call"); VT.add(",");
+		VT.add(">=");     VT.add(",");	VT.add("||");	VT.add("&&");	VT.add(".");
+		VT.add("{");	VT.add("}");	VT.add("!");	VT.add("or");
 		
 		addFirst();
 	}
@@ -50,10 +62,11 @@ public class Pretreat{
 			String line = scanner.nextLine().trim();
 			if(!line.equals("")){
 				String[] div = line.split("->");
-				String[] right = div[1].split("\\|");//将合并书写的多个表达式解析成多个
+				String[] right = div[1].split("\\|");
 				for(String r:right){
 					Production derivation = new Production(div[0].trim()+"->"+r.trim());
-					F.add(derivation);//存储到静态的容器中
+					//存储
+					F.add(derivation);
 				}
 			}			
 		}
@@ -73,9 +86,10 @@ public class Pretreat{
 		Iterator<String> iterVN = VN.iterator();
 		while(iterVN.hasNext()){
 			String vn = iterVN.next();
-			firstMap.put(vn, new TreeSet<String>());//因为后续操作没有交叉涉及firstMap，所以不必分成两个while循环，合成一趟即可
+			firstMap.put(vn, new TreeSet<String>());
 			firstMap.get(vn).addAll(findFirst(vn));
 		}
+		//System.out.println(firstMap);
 	}
 	
 	//一个用于查找first的递归函数
@@ -95,7 +109,7 @@ public class Pretreat{
 						set.add(emp);
 					// 非终结符，递归
 					else if(VN.contains(d.list.get(0))){
-						// 去除类似于E->E*E这样的左递归
+						// 去除左递归
 						if(!vn.equals(d.list.get(0))){
 							TreeSet<String> set2 = findFirst(d.list.get(0));
 							set.addAll(set2);  // 再次递归

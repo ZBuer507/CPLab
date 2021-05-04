@@ -210,6 +210,8 @@ public class LRTable implements Serializable{
 		if(v.equals("#")){
 			result.add("#");
 		}else{
+			//System.out.println(v);
+			//System.out.println(Pretreat.firstMap.get(v));
 			Iterator<String> iter = Pretreat.firstMap.get(v).iterator();
 			while(iter.hasNext())
 				result.add(iter.next());
@@ -233,6 +235,7 @@ public class LRTable implements Serializable{
 			int end = gotoEnd.get(i);
 			String path = gotoPath.get(i);
 			int pathIndex = gotoIndex(path);
+			//System.out.println(path);
 			this.gotoTable[start][pathIndex] = end;
 		}
 		//完善语法分析表的action部分
@@ -257,22 +260,22 @@ public class LRTable implements Serializable{
 			}
 		}
 	}
-	
-	private int gotoIndex(String s){//返回goto中的列数
+	//返回goto中的列数
+	private int gotoIndex(String s){
 		for(int i = 0;i < gotoLength;i++)
 			if(gotoCol[i].equals(s))
 				return i;
 		return -1;
 	}
-	
-	private int actionIndex(String s){//返回action中的列数
+	//返回action中的列数
+	private int actionIndex(String s){
 		for(int i = 0;i < actionLength;i++)
 			if(actionCol[i].equals(s))
 				return i;
 		return -1;
 	}
-	
-	private int derivationIndex(Production d){//返回是第几个表达式
+	//返回是第几个表达式
+	private int derivationIndex(Production d){
 		int size = Pretreat.F.size();
 		for(int i = 0;i < size;i++)
 			if(Pretreat.F.get(i).equals(d))

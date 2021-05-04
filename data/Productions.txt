@@ -1,27 +1,53 @@
-P'-> P
+P' -> Program
 
-P -> D						
-P -> S							
-S -> S S				
+Program -> ExtDefList
+ExtDefList -> ExtDef ExtDefList | ¦Å
+ExtDef -> Specifier ExtDecList SEMI | Specifier SEMI | Specifier FunDec CompSt
+ExtDecList -> VarDec | VarDec COMMA ExtDecList
 
-D -> D D | proc id ; D S | T id ; 		
-T -> X C | record D 			
-X -> integer | real				
-C -> [ num ] C | ¦Å 	
+Specifier -> TYPE | StructSpecifier
+StructSpecifier -> STRUCT OptTag LC DefList RC | STRUCT Tag
+OptTag -> ID | ¦Å
+Tag -> ID
 
+VarDec -> ID | VarDec LB INT RB
+FunDec -> ID LP VarList RP | ID LP RP
+VarList -> ParamDec COMMA VarList | ParamDec
+ParamDec -> Specifier VarDec
 
-S -> id = E ; | L = E ;
-E -> E + E | E * E | - E | ( E ) | id | digit | L
-L -> id [ E ] | L [ E ]
+CompSt -> LC DefList StmtList RC
+StmtList -> Stmt StmtList | ¦Å
+Stmt -> Exp SEMI | CompSt | RETURN Exp SEMI | IF LP Exp RP Stmt | IF LP Exp RP Stmt ELSE Stmt | WHILE LP Exp RP Stmt
 
-				
-S -> if B then S | if B then S else S | while B do S
+DefList -> Def DefList | ¦Å
+Def -> Specifier DecList SEMI
+DecList -> Dec | Dec COMMA DecList
+Dec -> VarDec | VarDec ASSIGNOP Exp
 
-B -> B or B | B and B | not B | ( B ) | E relop E | true | false	
-	
-relop -> < | <= | == | != | > | >=		
+Exp -> Exp ASSIGNOP Exp | Exp AND Exp | Exp OR Exp | Exp RELOP Exp | Exp PLUS Exp | Exp MINUS Exp | Exp STAR Exp | Exp DIV Exp | LP Exp RP | MINUS Exp | NOT Exp | ID LP Args RP | ID LP RP | Exp LB Exp RB | Exp DOT ID | ID | INT | FLOAT
+Args -> Exp COMMA Args | Exp
 
-
-S -> call id ( Elist )	
-Elist -> Elist , E						
-Elist -> E	
+SEMI -> ;
+COMMA -> ,
+ASSIGNOP -> =
+RELOP -> > | < | >= | <= | == | !=
+PLUS -> +
+MINUS -> -
+STAR -> *
+DIV -> /
+AND -> &&
+OR -> or
+DOT -> .
+NOT -> !
+TYPE -> int | float
+LP -> (
+RP -> )
+LB -> [
+RB -> ]
+LC -> {
+RC -> }
+STRUCT -> struct
+RETURN -> return
+IF -> if
+ELSE -> else
+WHILE -> while

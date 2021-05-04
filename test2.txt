@@ -1,24 +1,5 @@
-/*
-demo
-*/
-record
-	integer i;
-	real j;
-demo1;
-
-proc demo2;
-	integer [11][12] j;
-	j[5][6] = 10;
-	j[7][6] = j[5][6] + 10;
-//demo3
-if (i < 10) and (j >= 100) then
-	i = 10;
-else
+int main(){
+	int i;
 	i = 1;
-//demo4
-while true do
-	i = i + 1;
-//demo5
-call demo2(i)
-//bugs
-bug1 += 1;
+	return 0;
+}

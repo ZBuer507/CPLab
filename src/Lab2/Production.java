@@ -5,8 +5,10 @@ import java.util.ArrayList;
 //这个类表示一个产生式
 //序列化，便于输出和写入
 public class Production implements Serializable{
-	public String left;  // 产生式左部
-	public ArrayList<String> list = new ArrayList<String>();  //产生式右部
+	// 产生式左部
+	public String left;  
+	//产生式右部
+	public ArrayList<String> list = new ArrayList<String>();  
 	
     //构造函数要求输入产生式字符串
 	public Production(String s){

@@ -96,16 +96,20 @@ public class SyntaxParser{
 	
 	private String getValue(Token valueType, String typeBefore){
 		// 获取value值，要把所有类型的数字都转换为num
+		//System.out.println(valueType);
 		try{
 			int code = valueType.code;
 			if(code == 1)
-				return "id";
-			else if(code == 2) {
+				return "ID";
+			else if(code == 2)
+				return "INT";
 				//System.out.println(typeBefore);
-				if(typeBefore.equals("id")) return "digit";
+				/*
+				if(typeBefore.equals("ID")) return "INT";
 				else return "num";
-			}else if(code == 3)
-				return "digit";
+				*/
+			else if(code == 3)
+				return "FLOAT";
 			else if(code == 7)
 				return " ";
 			else if(code < 400 && code >=101)
@@ -124,8 +128,8 @@ public class SyntaxParser{
 		while(true){			
 			Token token = readToken();
 			String value = getValue(token, typeBefore);
-			if(value.equals("id") || value.equals("integer") || value.equals("real"))
-				typeBefore = value;
+			//if(value.equals("ID") || value.equals("int") || value.equals("real"))
+				//typeBefore = value;
 			//System.out.println(typeBefore);
 			if(value.equals(" "))
 				continue;
@@ -169,8 +173,8 @@ public class SyntaxParser{
 					tokenList.remove(token1);
 					index = index - 1;
 					String value1 = getValue(token1, typeBefore);
-					if(value1.equals("id") || value1.equals("integer") || value1.equals("real"))
-						typeBefore = value1;
+					//if(value1.equals("ID") || value1.equals("int") || value1.equals("real"))
+						//typeBefore = value1;
 					stateStack.pop();
 					tokenStack.pop();
 					if(value.equals("")){
