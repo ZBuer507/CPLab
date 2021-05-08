@@ -8,7 +8,7 @@ import java.util.Iterator;
 import java.util.Scanner;
 import java.util.TreeSet;
 
-public class Pretreat{
+public class ProductionRec{
 	public static String emp = "ε";  // 空串
 	public static String end = "#";  // 结束符
 	public static TreeSet<String> VN = new TreeSet<String>();  // 非终结符集

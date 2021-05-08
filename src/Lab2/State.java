@@ -4,26 +4,26 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class LRState implements Serializable{
+public class State implements Serializable{
 	// 项目集编号,即DFA状态号
 	public int id;  
 	//LR项目的集合,每个元素表示一个产生式状态
-	public ArrayList<LRItem> set = new ArrayList<LRItem>();  
+	public ArrayList<Sets> set = new ArrayList<Sets>();  
 	
     //构造函数，输入是状态号
-	public LRState(int id)	{
+	public State(int id)	{
 		this.id = id;
 	}
 	
-	public boolean contains(LRItem lrd)	{
-		for(LRItem l:set)
+	public boolean contains(Sets lrd)	{
+		for(Sets l:set)
 			if(l.equalTo(lrd))
 				return true;
 		return false;
 	}
 	
 	//向状态中添加新的项目，成功返回true,否则返回false
-	public boolean addNewDerivation(LRItem d){
+	public boolean addNewDerivation(Sets d){
 		if(contains(d)){
 			return false;
 		}else{
@@ -35,7 +35,7 @@ public class LRState implements Serializable{
     //返回点后所有的符号
 	public ArrayList<String> getGotoPath(){
 		ArrayList<String> result = new ArrayList<String>();
-		for(LRItem lrd:set){
+		for(Sets lrd:set){
 			// 规约状态
 			if(lrd.d.list.size()==lrd.index)
 				continue;
@@ -48,20 +48,20 @@ public class LRState implements Serializable{
 	}
 	
     //返回此项目的后继项目集
-	public ArrayList<LRItem> getLRDs(String s){
-		ArrayList<LRItem> result = new ArrayList<LRItem>();
-		for(LRItem lrd:set){
+	public ArrayList<Sets> getLRDs(String s){
+		ArrayList<Sets> result = new ArrayList<Sets>();
+		for(Sets lrd:set){
 			// 非规约状态
 			if(lrd.d.list.size() != lrd.index){
 				String s1 = lrd.d.list.get(lrd.index);
 				if(s1.equals(s))
-					result.add((LRItem)lrd.clone());
+					result.add((Sets)lrd.clone());
 			}
 		}
 		return result;
 	}
 	
-	public boolean equalTo(LRState state){
+	public boolean equalTo(State state){
 		if(this.toString().hashCode()==state.toString().hashCode())
             // if(contains(set,state.set)&&contains(state.set,set)){
 			return true;
@@ -80,7 +80,7 @@ public class LRState implements Serializable{
 	}
 	
 	public void print(){
-		Iterator<LRItem> iter = set.iterator();
+		Iterator<Sets> iter = set.iterator();
 		while(iter.hasNext())
 			iter.next().print();
 	}

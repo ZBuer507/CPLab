@@ -1,0 +1,11 @@
+主函数在Main.java
+正常java编译即可
+读取的文件需要与Lexer.jar同一目录下
+生成的文件为parser.out, 错误报告在parser_error.out
+项目集在data/Set.txt, Table在data/Table.txt, 产生式在data/Productions.txt
+生成的LRTable存储在data/LRtable.bin中, 后面只需要应用已生成的table即可(通过修改Main.java中的iscached来实现, 1表示重新生成, 0表示从文件中读取)
+test2.txt中无bug, test2_bugs.txt中有bug, 通过修改Main.java中的file_name来读取不同文件
+命令行如下（需要cd到项目目录）：
+javac -d . Main.java Lexer.java TokenRec.java Token.java SyntaxParser.java ToFile.java LRTable.java LRItem.java LRState.java LRStateSet.java Pretreat.java Production.java
+jar cvf Lexer.jar Lab2
+java -cp .;Lexer.java Lab2.Main

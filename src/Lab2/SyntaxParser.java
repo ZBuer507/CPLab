@@ -17,7 +17,7 @@ public class SyntaxParser{
 	private ArrayList<Token> tokenList = new ArrayList<Token>();
 	private int length;
 	private int index;
-	private LRTable table;
+	private LR1 table;
 	private Stack<Integer> stateStack;
 	private Stack<Token> tokenStack;
 	private static List<String> tree = new ArrayList<String>();
@@ -51,10 +51,10 @@ public class SyntaxParser{
 		this.index = 0;
 		if(cached == 0){
 			//生成分析表
-			this.table = new LRTable();
-			TableIO.saveObjToFile(this.table);
+			this.table = new LR1();
+			ToFile.saveObjToFile(this.table);
 		}else{
-		    this.table = TableIO.getObjFromFile();
+		    this.table = ToFile.getObjFromFile();
 		}
 		this.stateStack = new Stack<Integer>();  // 状态栈
 		this.stateStack.push(0);  // 初始为0状态
@@ -95,7 +95,6 @@ public class SyntaxParser{
 	}
 	
 	private String getValue(Token valueType, String typeBefore){
-		// 获取value值，要把所有类型的数字都转换为num
 		//System.out.println(valueType);
 		try{
 			int code = valueType.code;
@@ -143,7 +142,7 @@ public class SyntaxParser{
 				stateStack.push(newState);
 				tokenStack.push(token);
 			}else if(action.startsWith("r")){
-				Production derivation = Pretreat.F.get(Integer.parseInt(action.substring(1)));
+				Production derivation = ProductionRec.F.get(Integer.parseInt(action.substring(1)));
 				//查找对应的产生式，产生式类型由左部和右部构成
 				System.out.println(derivation);
 				int r = derivation.list.size();

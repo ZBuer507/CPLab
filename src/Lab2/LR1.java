@@ -10,8 +10,8 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-public class LRTable implements Serializable{
-	public LRStateSet dfa;  // 所有DFA状态
+public class LR1 implements Serializable{
+	public States dfa;  // 所有DFA状态
 	public int stateNum;  // DFA状态数
 	public int actionLength;  // Action表列数
 	public int gotoLength;  // GoTo表列数
@@ -26,7 +26,7 @@ public class LRTable implements Serializable{
 	private ArrayList<String> gotoPath = new ArrayList<String>();  // 存储S符号
 	
    //构造分析表
-	public LRTable(){
+	public LR1(){
 		createTableHeader();//建表
 		this.actionLength = actionCol.length;
 		this.gotoLength = gotoCol.length;
@@ -40,15 +40,15 @@ public class LRTable implements Serializable{
 	//建立分析表表头
 	private void createTableHeader(){
 		//以下是建立一个表的列
-		this.actionCol = new String[Pretreat.VT.size()+1];
-		this.gotoCol = new String[Pretreat.VN.size()+Pretreat.VT.size()];
-		Iterator<String> iter1 = Pretreat.VT.iterator();//遍历所有的终结符
-		Iterator<String> iter2 = Pretreat.VN.iterator();//遍历所有的非终结符
+		this.actionCol = new String[ProductionRec.VT.size()+1];
+		this.gotoCol = new String[ProductionRec.VN.size()+ProductionRec.VT.size()];
+		Iterator<String> iter1 = ProductionRec.VT.iterator();//遍历所有的终结符
+		Iterator<String> iter2 = ProductionRec.VN.iterator();//遍历所有的非终结符
 		int i = 0;
 		// 终结符集合
 		while(iter1.hasNext()){
 			String vt = iter1.next();
-			if(!vt.equals(Pretreat.emp)){
+			if(!vt.equals(ProductionRec.emp)){
 				actionCol[i] = vt;
 				gotoCol[i] = vt;
 				i++;
@@ -64,13 +64,13 @@ public class LRTable implements Serializable{
 	
     //递归地建立一个DFA
 	private void createDFA(){
-		this.dfa = new LRStateSet();//存放所有的状态
-		LRState state0 = new LRState(0);
-		state0.addNewDerivation(new LRItem(getDerivation("P'").get(0),"#",0));  
+		this.dfa = new States();//存放所有的状态
+		State state0 = new State(0);
+		state0.addNewDerivation(new Sets(getDerivation("P'").get(0),"#",0));  
 		// 状态0中加入一个增广的产生式
 		for(int i = 0;i < state0.set.size();i++){
 			//遍历状态0的所有产生式
-			LRItem lrd = state0.set.get(i);
+			Sets lrd = state0.set.get(i);
 			//lrd.index是点所在的位置
 			if(lrd.index < lrd.d.list.size()){
 				// 获取"."后面的符号
@@ -94,17 +94,17 @@ public class LRTable implements Serializable{
 					if(flag)
 						firstB.add(lrd.lr);
 				}
-				if(Pretreat.VN.contains(A)){
+				if(ProductionRec.VN.contains(A)){
 					ArrayList<Production> dA = getDerivation(A);
 					//遍历所有的后继产生式，做相应的处理
 					for(int j=0,length1=dA.size();j<length1;j++){
 						for(String f:firstB){
 							if(!f.equals("ε")){
-								LRItem lrd1;
+								Sets lrd1;
 								if(dA.get(j).list.get(0).equals("ε"))
-									lrd1 = new LRItem(dA.get(j), f, 1);
+									lrd1 = new Sets(dA.get(j), f, 1);
 								else
-									lrd1 = new LRItem(dA.get(j), f, 0);
+									lrd1 = new Sets(dA.get(j), f, 0);
 								if(!state0.contains(lrd1))
 									state0.addNewDerivation(lrd1);
 							}
@@ -118,16 +118,16 @@ public class LRTable implements Serializable{
 		ArrayList<String> gotoPath = state0.getGotoPath();
 		for(String path:gotoPath){
 			//直接通过路径传到下一个状态的情况
-			ArrayList<LRItem> list = state0.getLRDs(path);
+			ArrayList<Sets> list = state0.getLRDs(path);
 			//开始进行递归，建立用于分析的DFA
 			addState(0,path,list);
 		}
 	}
 
 	//类似于上一个函数的实现逻辑
-	private void addState(int lastState,String path,ArrayList<LRItem> list)
+	private void addState(int lastState,String path,ArrayList<Sets> list)
 	{
-		LRState temp = new LRState(0);
+		State temp = new State(0);
 		for(int i = 0;i < list.size();i++){
 			list.get(i).index++;
 			temp.addNewDerivation(list.get(i));
@@ -158,11 +158,11 @@ public class LRTable implements Serializable{
 				for(int j = 0;j < dA.size();j++){
 					for(String f:firstB){
 						if(!f.equals("ε")){
-							LRItem lrd;
+							Sets lrd;
 							if(dA.get(j).list.get(0).equals("ε"))
-								lrd = new LRItem(dA.get(j), f, 1);
+								lrd = new Sets(dA.get(j), f, 1);
 							else
-								lrd = new LRItem(dA.get(j), f, 0);
+								lrd = new Sets(dA.get(j), f, 0);
 							if(!temp.contains(lrd))
 								temp.addNewDerivation(lrd);
 						}
@@ -185,16 +185,15 @@ public class LRTable implements Serializable{
 		gotoPath.add(path);
 		ArrayList<String> gotoPath = temp.getGotoPath();
 		for(String p:gotoPath){
-			ArrayList<LRItem> l = temp.getLRDs(p);//直接通过路径传到下一个状态的情况
+			ArrayList<Sets> l = temp.getLRDs(p);//直接通过路径传到下一个状态的情况
 			addState(temp.id,p,l);
 		}
 	}
 	
 	//获取以一个特定符号为左部的所有产生式
-	public ArrayList<Production> getDerivation(String v)
-	{
+	public ArrayList<Production> getDerivation(String v){
 		ArrayList<Production> result = new ArrayList<Production>();
-		Iterator<Production> iter = Pretreat.F.iterator();
+		Iterator<Production> iter = ProductionRec.F.iterator();
 		while(iter.hasNext()){
 			Production d = iter.next();
 			if(d.left.equals(v))
@@ -204,15 +203,14 @@ public class LRTable implements Serializable{
 	}
 	
 	//获取文法符号的first集合
-	private Set<String> first(String v)
-	{
+	private Set<String> first(String v){
 		Set<String> result = new HashSet<String>();
 		if(v.equals("#")){
 			result.add("#");
 		}else{
 			//System.out.println(v);
-			//System.out.println(Pretreat.firstMap.get(v));
-			Iterator<String> iter = Pretreat.firstMap.get(v).iterator();
+			//System.out.println(ProductionRec.firstMap.get(v));
+			Iterator<String> iter = ProductionRec.firstMap.get(v).iterator();
 			while(iter.hasNext())
 				result.add(iter.next());
 		}
@@ -241,19 +239,24 @@ public class LRTable implements Serializable{
 		//完善语法分析表的action部分
 		int stateCount = dfa.states.size();
 		for(int i = 0;i < stateCount;i++){
-			LRState state = dfa.get(i);//获取dfa的单个状态
-			for(LRItem lrd:state.set){//对每一个进行分析
+			//获取dfa的单个状态
+			State state = dfa.get(i);
+			//对每一个进行分析
+			for(Sets lrd:state.set){
 				if(lrd.index == lrd.d.list.size()){
 					if(!lrd.d.left.equals("P'")){
 						int derivationIndex = derivationIndex(lrd.d);
 						String value = "r"+derivationIndex;
-						actionTable[i][actionIndex(lrd.lr)] = value;//设为规约
+						//设为规约
+						actionTable[i][actionIndex(lrd.lr)] = value;
 					}else{
-						actionTable[i][actionIndex("#")] = "acc";//设为接受
+						//设为接受
+						actionTable[i][actionIndex("#")] = "acc";
 					}
 				}else{
-					String next = lrd.d.list.get(lrd.index);//获取·后面的文法符号
-					if(Pretreat.VT.contains(next))
+					//获取·后面的文法符号
+					String next = lrd.d.list.get(lrd.index);
+					if(ProductionRec.VT.contains(next))
 						if(gotoTable[i][gotoIndex(next)] != -1)
 							actionTable[i][actionIndex(next)] = "s"+gotoTable[i][gotoIndex(next)];
 				}
@@ -276,9 +279,9 @@ public class LRTable implements Serializable{
 	}
 	//返回是第几个表达式
 	private int derivationIndex(Production d){
-		int size = Pretreat.F.size();
+		int size = ProductionRec.F.size();
 		for(int i = 0;i < size;i++)
-			if(Pretreat.F.get(i).equals(d))
+			if(ProductionRec.F.get(i).equals(d))
 				return i;
 		return -1;
 	}
@@ -344,8 +347,7 @@ public class LRTable implements Serializable{
 	}
 	
 	
-	public void writefile(StringBuffer str)
-	{		
+	public void writefile(StringBuffer str){		
         String path = "data/Table.txt";
         try{
             File file = new File(path);

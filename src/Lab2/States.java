@@ -8,9 +8,9 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 //这个类是一个辅助类，用于整合各个分析器状态
-public class LRStateSet implements Serializable{
-	public ArrayList<LRState> states = new ArrayList<LRState>();
-	public LRState get(int i){
+public class States implements Serializable{
+	public ArrayList<State> states = new ArrayList<State>();
+	public State get(int i){
 		return states.get(i);
 	}
 	

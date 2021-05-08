@@ -1,0 +1,10 @@
+float bugs(k){
+	int j10];
+	k = 1;
+	
+	if(k){
+		return 1;
+	}else
+		return 0;
+	}
+}

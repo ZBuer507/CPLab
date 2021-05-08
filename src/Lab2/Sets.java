@@ -3,12 +3,12 @@ package Lab2;
 import java.io.Serializable;
 
 //这个类表示一个产生式可能所处的状态
-public class LRItem implements java.lang.Cloneable,Serializable{
+public class Sets implements java.lang.Cloneable,Serializable{
 	public Production d;  // 产生式
 	public String lr;  // 展望符
 	public int index;  // 当前点所处位置
 	 // 构造函数，要求输入产生式本身，展望符和点所在位置
-	public LRItem(Production d,String lr,int index){
+	public Sets(Production d,String lr,int index){
 		this.d = d;
 		this.lr = lr;
 		this.index = index;
@@ -37,7 +37,7 @@ public class LRItem implements java.lang.Cloneable,Serializable{
 		return result;
 	}
 	
-	public boolean equalTo(LRItem lrd){
+	public boolean equalTo(Sets lrd){
 		if(d.equalTo(lrd.d)&&lr.hashCode()==lrd.lr.hashCode()&&index==lrd.index)
 			return true;
 		else 
@@ -49,6 +49,6 @@ public class LRItem implements java.lang.Cloneable,Serializable{
 	}
 	
 	public Object clone(){
-		return new LRItem(d,lr,index);
+		return new Sets(d,lr,index);
 	}
 }

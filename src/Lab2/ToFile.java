@@ -7,9 +7,9 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-public class TableIO {
+public class ToFile {
 	//将LRTable写入文件
-	public static void saveObjToFile(LRTable t){
+	public static void saveObjToFile(LR1 t){
 		try {
 			ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("data/LRtable.bin"));
 			oos.writeObject(t);
@@ -22,11 +22,11 @@ public class TableIO {
 	}
 	
 	//从文件中读出对象，并且返回LRTable对象
-	public static LRTable getObjFromFile(){
+	public static LR1 getObjFromFile(){
 		try{
 			@SuppressWarnings("resource")
 			ObjectInputStream ois = new ObjectInputStream(new FileInputStream("data/LRtable.bin"));
-			LRTable table = (LRTable)ois.readObject();
+			LR1 table = (LR1)ois.readObject();
 			return table;
 		} catch (FileNotFoundException e){
 			e.printStackTrace();
