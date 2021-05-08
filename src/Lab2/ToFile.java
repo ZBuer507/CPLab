@@ -11,7 +11,7 @@ public class ToFile {
 	//将LRTable写入文件
 	public static void saveObjToFile(LR1 t){
 		try {
-			ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("data/LRtable.bin"));
+			ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("data/LR1.model"));
 			oos.writeObject(t);
 			oos.close();
 		} catch (FileNotFoundException e) {
@@ -25,7 +25,7 @@ public class ToFile {
 	public static LR1 getObjFromFile(){
 		try{
 			@SuppressWarnings("resource")
-			ObjectInputStream ois = new ObjectInputStream(new FileInputStream("data/LRtable.bin"));
+			ObjectInputStream ois = new ObjectInputStream(new FileInputStream("data/LR1.model"));
 			LR1 table = (LR1)ois.readObject();
 			return table;
 		} catch (FileNotFoundException e){

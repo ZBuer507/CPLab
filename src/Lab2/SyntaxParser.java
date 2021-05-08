@@ -50,19 +50,16 @@ public class SyntaxParser{
 		this.length = this.tokenList.size();
 		this.index = 0;
 		if(cached == 0){
-			//生成分析表
 			this.table = new LR1();
 			ToFile.saveObjToFile(this.table);
 		}else{
 		    this.table = ToFile.getObjFromFile();
 		}
-		this.stateStack = new Stack<Integer>();  // 状态栈
-		this.stateStack.push(0);  // 初始为0状态
+		this.stateStack = new Stack<Integer>();
+		this.stateStack.push(0);
 		this.tokenStack = new Stack<Token>();
 		this.tokenStack.push(new Token(-1, "#", -1));
-		// 写入Sets.txt"
 		this.table.dfa.writefile();
-		// 写入文件"Table.txt"
 		this.table.print();
 		SyntaxParser.tree = tree;
 		SyntaxParser.errors = errors;

@@ -8,7 +8,7 @@ public class Main {
 		String file_name = "test2.txt";
 		//String file_name = "test2_bugs.txt";
 		//0表示新建分析表
-		int iscached = 0;
+		int iscached = 1;
 		List<String> result = new ArrayList<String>();
 		List<String> errors = new ArrayList<String>();
 		SyntaxParser se = new SyntaxParser(file_name, result, errors, iscached);
