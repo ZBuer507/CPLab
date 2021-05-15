@@ -1,0 +1,979 @@
+
+当前待输入: proc fuction1 ; begin proc fuction2 ; begin integer [ 2 ] [ 2 ] arr ; integer m ; integer n ; integer a ; integer b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: fuction1 ; begin proc fuction2 ; begin integer [ 2 ] [ 2 ] arr ; integer m ; integer n ; integer a ; integer b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: ; begin proc fuction2 ; begin integer [ 2 ] [ 2 ] arr ; integer m ; integer n ; integer a ; integer b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: begin proc fuction2 ; begin integer [ 2 ] [ 2 ] arr ; integer m ; integer n ; integer a ; integer b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+M0 -> ε
+规约	当前待输入: begin proc fuction2 ; begin integer [ 2 ] [ 2 ] arr ; integer m ; integer n ; integer a ; integer b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: proc fuction2 ; begin integer [ 2 ] [ 2 ] arr ; integer m ; integer n ; integer a ; integer b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: fuction2 ; begin integer [ 2 ] [ 2 ] arr ; integer m ; integer n ; integer a ; integer b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: ; begin integer [ 2 ] [ 2 ] arr ; integer m ; integer n ; integer a ; integer b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: begin integer [ 2 ] [ 2 ] arr ; integer m ; integer n ; integer a ; integer b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+N1 -> ε
+规约	当前待输入: begin integer [ 2 ] [ 2 ] arr ; integer m ; integer n ; integer a ; integer b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: integer [ 2 ] [ 2 ] arr ; integer m ; integer n ; integer a ; integer b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: [ 2 ] [ 2 ] arr ; integer m ; integer n ; integer a ; integer b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+X -> integer
+规约	当前待输入: [ 2 ] [ 2 ] arr ; integer m ; integer n ; integer a ; integer b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: 2 ] [ 2 ] arr ; integer m ; integer n ; integer a ; integer b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: ] [ 2 ] arr ; integer m ; integer n ; integer a ; integer b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: [ 2 ] arr ; integer m ; integer n ; integer a ; integer b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: 2 ] arr ; integer m ; integer n ; integer a ; integer b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: ] arr ; integer m ; integer n ; integer a ; integer b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: arr ; integer m ; integer n ; integer a ; integer b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+C -> ε
+规约	当前待输入: arr ; integer m ; integer n ; integer a ; integer b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+C -> [ num ] C
+规约	当前待输入: arr ; integer m ; integer n ; integer a ; integer b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+C -> [ num ] C
+规约	当前待输入: arr ; integer m ; integer n ; integer a ; integer b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+T -> X C
+规约	当前待输入: arr ; integer m ; integer n ; integer a ; integer b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: ; integer m ; integer n ; integer a ; integer b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: integer m ; integer n ; integer a ; integer b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+D -> T id ;
+规约	当前待输入: integer m ; integer n ; integer a ; integer b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: m ; integer n ; integer a ; integer b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+X -> integer
+规约	当前待输入: m ; integer n ; integer a ; integer b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+C -> ε
+规约	当前待输入: m ; integer n ; integer a ; integer b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+T -> X C
+规约	当前待输入: m ; integer n ; integer a ; integer b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: ; integer n ; integer a ; integer b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: integer n ; integer a ; integer b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+D -> T id ;
+规约	当前待输入: integer n ; integer a ; integer b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: n ; integer a ; integer b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+X -> integer
+规约	当前待输入: n ; integer a ; integer b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+C -> ε
+规约	当前待输入: n ; integer a ; integer b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+T -> X C
+规约	当前待输入: n ; integer a ; integer b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: ; integer a ; integer b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: integer a ; integer b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+D -> T id ;
+规约	当前待输入: integer a ; integer b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: a ; integer b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+X -> integer
+规约	当前待输入: a ; integer b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+C -> ε
+规约	当前待输入: a ; integer b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+T -> X C
+规约	当前待输入: a ; integer b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: ; integer b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: integer b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+D -> T id ;
+规约	当前待输入: integer b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+X -> integer
+规约	当前待输入: b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+C -> ε
+规约	当前待输入: b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+T -> X C
+规约	当前待输入: b ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: ; integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+D -> T id ;
+规约	当前待输入: integer c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+X -> integer
+规约	当前待输入: c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+C -> ε
+规约	当前待输入: c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+T -> X C
+规约	当前待输入: c ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: ; integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+D -> T id ;
+规约	当前待输入: integer d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+X -> integer
+规约	当前待输入: d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+C -> ε
+规约	当前待输入: d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+T -> X C
+规约	当前待输入: d ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: ; real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+D -> T id ;
+规约	当前待输入: real e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+X -> real
+规约	当前待输入: e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+C -> ε
+规约	当前待输入: e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+T -> X C
+规约	当前待输入: e ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: ; record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+D -> T id ;
+规约	当前待输入: record real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+N2 -> ε
+规约	当前待输入: real re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+X -> real
+规约	当前待输入: re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+C -> ε
+规约	当前待输入: re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+T -> X C
+规约	当前待输入: re1 ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: ; integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+D -> T id ;
+规约	当前待输入: integer re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+X -> integer
+规约	当前待输入: re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+C -> ε
+规约	当前待输入: re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+T -> X C
+规约	当前待输入: re2 ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: ; end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+D -> T id ;
+规约	当前待输入: end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+D -> D D
+规约	当前待输入: end r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+T -> record N2 D end
+规约	当前待输入: r1 ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: ; integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+D -> T id ;
+规约	当前待输入: integer x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+X -> integer
+规约	当前待输入: x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+C -> ε
+规约	当前待输入: x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+T -> X C
+规约	当前待输入: x ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: ; integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+D -> T id ;
+规约	当前待输入: integer y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+X -> integer
+规约	当前待输入: y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+C -> ε
+规约	当前待输入: y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+T -> X C
+规约	当前待输入: y ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: ; integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+D -> T id ;
+规约	当前待输入: integer z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+X -> integer
+规约	当前待输入: z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+C -> ε
+规约	当前待输入: z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+T -> X C
+规约	当前待输入: z ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: ; /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: /* Duplicate definition */ integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+当前待输入: integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+D -> T id ;
+规约	当前待输入: integer z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+X -> integer
+规约	当前待输入: z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+C -> ε
+规约	当前待输入: z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+T -> X C
+规约	当前待输入: z ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: ; while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+D -> T id ;
+规约	当前待输入: while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+D -> D D
+规约	当前待输入: while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+D -> D D
+规约	当前待输入: while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+D -> D D
+规约	当前待输入: while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+D -> D D
+规约	当前待输入: while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+D -> D D
+规约	当前待输入: while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+D -> D D
+规约	当前待输入: while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+D -> D D
+规约	当前待输入: while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+D -> D D
+规约	当前待输入: while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+D -> D D
+规约	当前待输入: while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+D -> D D
+规约	当前待输入: while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+D -> D D
+规约	当前待输入: while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+D -> D D
+规约	当前待输入: while a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+M -> ε
+规约	当前待输入: a < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E2 -> id
+规约	当前待输入: < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E1 -> E2
+规约	当前待输入: < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E -> E1
+规约	当前待输入: < b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+R -> <
+规约	当前待输入: b do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E2 -> id
+规约	当前待输入: do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E1 -> E2
+规约	当前待输入: do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E -> E1
+规约	当前待输入: do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+B2 -> E R E
+规约	当前待输入: do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+B1 -> B2
+规约	当前待输入: do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+B -> B1
+规约	当前待输入: do begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+M -> ε
+规约	当前待输入: begin if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: if c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: c < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E2 -> id
+规约	当前待输入: < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E1 -> E2
+规约	当前待输入: < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E -> E1
+规约	当前待输入: < d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+R -> <
+规约	当前待输入: d then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E2 -> id
+规约	当前待输入: then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E1 -> E2
+规约	当前待输入: then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E -> E1
+规约	当前待输入: then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+B2 -> E R E
+规约	当前待输入: then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+B1 -> B2
+规约	当前待输入: then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+B -> B1
+规约	当前待输入: then begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+M -> ε
+规约	当前待输入: begin x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: x = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: = y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: y + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E2 -> id
+规约	当前待输入: + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E1 -> E2
+规约	当前待输入: + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E -> E1
+规约	当前待输入: + z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: z ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E2 -> id
+规约	当前待输入: ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E1 -> E2
+规约	当前待输入: ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E -> E + E1
+规约	当前待输入: ; end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+S -> id = E ;
+规约	当前待输入: end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+S3 -> S
+规约	当前待输入: end else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+S1 -> begin S3 end
+规约	当前待输入: else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+N -> ε
+规约	当前待输入: else begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+M -> ε
+规约	当前待输入: begin x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: x = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: = y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: y * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E2 -> id
+规约	当前待输入: * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E1 -> E2
+规约	当前待输入: * z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: z ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E2 -> id
+规约	当前待输入: ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E1 -> E1 * E2
+规约	当前待输入: ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E -> E1
+规约	当前待输入: ; end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+S -> id = E ;
+规约	当前待输入: end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+S3 -> S
+规约	当前待输入: end end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+S2 -> begin S3 end
+规约	当前待输入: end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+S2 -> if B then M S1 N else M S2
+规约	当前待输入: end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+S -> S2
+规约	当前待输入: end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+S3 -> S
+规约	当前待输入: end arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+S0 -> begin S3 end
+规约	当前待输入: arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+S1 -> while M B do M S0
+规约	当前待输入: arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+S -> S1
+规约	当前待输入: arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+M -> ε
+规约	当前待输入: arr [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: [ 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: 3 ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E2 -> num
+规约	当前待输入: ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E1 -> E2
+规约	当前待输入: ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E -> E1
+规约	当前待输入: ] [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+L -> id [ E ]
+规约	当前待输入: [ 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: 5 ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E2 -> num
+规约	当前待输入: ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E1 -> E2
+规约	当前待输入: ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E -> E1
+规约	当前待输入: ] = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+L -> L [ E ]
+规约	当前待输入: = 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: 2 ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E2 -> num
+规约	当前待输入: ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E1 -> E2
+规约	当前待输入: ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E -> E1
+规约	当前待输入: ; a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+S -> L = E ;
+规约	当前待输入: a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+M -> ε
+规约	当前待输入: a = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: = m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: m + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E2 -> id
+规约	当前待输入: + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E1 -> E2
+规约	当前待输入: + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E -> E1
+规约	当前待输入: + n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: n ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E2 -> id
+规约	当前待输入: ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E1 -> E2
+规约	当前待输入: ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E -> E + E1
+规约	当前待输入: ; m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+S -> id = E ;
+规约	当前待输入: m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+M -> ε
+规约	当前待输入: m = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: = ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: ( m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: m + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E2 -> id
+规约	当前待输入: + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E1 -> E2
+规约	当前待输入: + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E -> E1
+规约	当前待输入: + n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: n ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E2 -> id
+规约	当前待输入: ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E1 -> E2
+规约	当前待输入: ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E -> E + E1
+规约	当前待输入: ) * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E2 -> ( E )
+规约	当前待输入: * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E1 -> E2
+规约	当前待输入: * 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: 9 ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E2 -> num
+规约	当前待输入: ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E1 -> E1 * E2
+规约	当前待输入: ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E -> E1
+规约	当前待输入: ; /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: /* type conversion */ e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+当前待输入: e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+S -> id = E ;
+规约	当前待输入: e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+M -> ε
+规约	当前待输入: e = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: = e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: e + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E2 -> id
+规约	当前待输入: + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E1 -> E2
+规约	当前待输入: + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E -> E1
+规约	当前待输入: + a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: a ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E2 -> id
+规约	当前待输入: ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E1 -> E2
+规约	当前待输入: ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E -> E + E1
+规约	当前待输入: ; /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: /* Call common var */ call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+当前待输入: call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+S -> id = E ;
+规约	当前待输入: call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+M -> ε
+规约	当前待输入: call a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: a ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: ( 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: 1 ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E2 -> num
+规约	当前待输入: ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E1 -> E2
+规约	当前待输入: ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E -> E1
+规约	当前待输入: ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+EL -> E
+规约	当前待输入: ) ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: ; /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: /* Use undefined var */ e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+当前待输入: e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+S -> call id ( EL ) ;
+规约	当前待输入: e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+M -> ε
+规约	当前待输入: e1 = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: = 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: 7 ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E2 -> num
+规约	当前待输入: ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E1 -> E2
+规约	当前待输入: ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E -> E1
+规约	当前待输入: ; /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: /* Non-array using array operators */ a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+当前待输入: a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+S -> id = E ;
+规约	当前待输入: a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+M -> ε
+规约	当前待输入: a [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: [ 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: 0 ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E2 -> num
+规约	当前待输入: ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E1 -> E2
+规约	当前待输入: ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E -> E1
+规约	当前待输入: ] = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+L -> id [ E ]
+规约	当前待输入: = 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: 1 ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E2 -> num
+规约	当前待输入: ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E1 -> E2
+规约	当前待输入: ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E -> E1
+规约	当前待输入: ; /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: /* Add array and var */ a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+当前待输入: a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+S -> L = E ;
+规约	当前待输入: a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+M -> ε
+规约	当前待输入: a = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: = a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: a + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E2 -> id
+规约	当前待输入: + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E1 -> E2
+规约	当前待输入: + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E -> E1
+规约	当前待输入: + arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: arr ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E2 -> id
+规约	当前待输入: ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E1 -> E2
+规约	当前待输入: ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+E -> E + E1
+规约	当前待输入: ; end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+S -> id = E ;
+规约	当前待输入: end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+S -> S M S
+规约	当前待输入: end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+S -> S M S
+规约	当前待输入: end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+S -> S M S
+规约	当前待输入: end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+S -> S M S
+规约	当前待输入: end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+S -> S M S
+规约	当前待输入: end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+S -> S M S
+规约	当前待输入: end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+S -> S M S
+规约	当前待输入: end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+S -> S M S
+规约	当前待输入: end call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+D -> proc id ; N1 begin D S end
+规约	当前待输入: call fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: fuction2 ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: ( 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: 1 , 2 , 3 ) ; end # 
+
+移入	当前待输入: , 2 , 3 ) ; end # 
+
+E2 -> num
+规约	当前待输入: , 2 , 3 ) ; end # 
+
+E1 -> E2
+规约	当前待输入: , 2 , 3 ) ; end # 
+
+E -> E1
+规约	当前待输入: , 2 , 3 ) ; end # 
+
+EL -> E
+规约	当前待输入: , 2 , 3 ) ; end # 
+
+移入	当前待输入: 2 , 3 ) ; end # 
+
+移入	当前待输入: , 3 ) ; end # 
+
+E2 -> num
+规约	当前待输入: , 3 ) ; end # 
+
+E1 -> E2
+规约	当前待输入: , 3 ) ; end # 
+
+E -> E1
+规约	当前待输入: , 3 ) ; end # 
+
+EL -> EL , E
+规约	当前待输入: , 3 ) ; end # 
+
+移入	当前待输入: 3 ) ; end # 
+
+移入	当前待输入: ) ; end # 
+
+E2 -> num
+规约	当前待输入: ) ; end # 
+
+E1 -> E2
+规约	当前待输入: ) ; end # 
+
+E -> E1
+规约	当前待输入: ) ; end # 
+
+EL -> EL , E
+规约	当前待输入: ) ; end # 
+
+移入	当前待输入: ; end # 
+
+移入	当前待输入: end # 
+
+S -> call id ( EL ) ;
+规约	当前待输入: end # 
+
+移入	当前待输入: # 
+
+P -> proc id ; M0 begin D S end
+规约	当前待输入: # 
+
+语法分析完成	

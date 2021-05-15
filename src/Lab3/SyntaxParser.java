@@ -166,7 +166,7 @@ public class SyntaxParser{
 				ArrayList<TreeNode> sonList = new ArrayList<TreeNode>(son);
 				tree.add(new Tree(treeNodeID.peek(),sonList));
 			}else if(action.equals("acc")){
-				System.out.print("Accepted"+"\n");
+				//System.out.print("Accepted"+"\n");
 				result.append("语法分析完成"+"\t");
 				return;
 				//返回语法树的根节点
@@ -220,7 +220,7 @@ public class SyntaxParser{
 	
 	//输出结果
 	private static void writeToFile(StringBuffer str){
-        String path = "lab3_syntax_out.txt";
+        String path = "Lab3-data/lab3_syntax_out.txt";
         try{
             File file = new File(path);
             FileWriter fw = new FileWriter(file);

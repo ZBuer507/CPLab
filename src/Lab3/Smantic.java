@@ -8,7 +8,7 @@ import java.util.Stack;
 
 public class Smantic {
 	private static ArrayList<Tree> tree = new ArrayList<Tree>(); // 语法树
-	static List<Properties> tree_pro; // 语法树节点属性
+	static List<OneForAll> tree_pro; // 语法树节点属性
 
 	static List<Stack<Symbol>> table = new ArrayList<Stack<Symbol>>(); // 符号表
 	static List<Integer> tablesize = new ArrayList<Integer>(); // 记录各个符号表大小
@@ -51,7 +51,7 @@ public class Smantic {
 		SyntaxParser parser = new SyntaxParser(filename, iscached, tree);
 		treeSize = tree.size();
 		nodeSize = tree.get(treeSize - 1).getFather().getId() + 1;
-		tree_pro = Arrays.asList(new Properties[nodeSize]); // 符号属性
+		tree_pro = Arrays.asList(new OneForAll[nodeSize]); // 符号属性
 		four_addr.clear();
 		three_addr.clear();
 		table.clear();
@@ -102,6 +102,7 @@ public class Smantic {
             BufferedWriter bw = new BufferedWriter(fw);
             for(String line : errors) {
     			bw.write(line + "\n");
+    			System.out.println(line);
     		}
             bw.close();
         }catch (IOException e){
@@ -125,20 +126,17 @@ public class Smantic {
 
 	//深搜遍历语法树
 	public static void dfs(Tree tree) {
-		int flag = 0;
 		for (int i = 0; i < tree.getChildren().size(); i++) {
 			TreeNode tn = tree.getChildren().get(i);
-			if (!Others.endPoint(tn)) // 非终结符
-			{
-				flag = 1;
+			// 非终结符
+			if (!Others.endPoint(tn)){
 				// 找到树的下一节点
 				Tree f = findTreeNode(tn.getId());
-				dfs(f); // 递归遍历孩子节点
-				findSemantic(f); // 查找相应的语义动作函数
+				// 递归遍历孩子节点
+				dfs(f); 
+				// 查找相应的语义动作函数
+				findSemantic(f); 
 			}
-		}
-		if (flag == 0) {
-			return;
 		}
 	}
 
@@ -237,12 +235,12 @@ public class Smantic {
 
 		backpatch(tree_pro.get(S1).getNext(), tree_pro.get(M).getQuad());
 
-		Properties a1 = new Properties();
+		OneForAll a1 = new OneForAll();
 		a1.setNext(tree_pro.get(S2).getNext());
 		tree_pro.set(S, a1);
 	}
 
-	// 下面的部分是声明语句的翻译
+	// 声明语句的翻译
 
 	// D -> T id ; {enter(top(tblptr),id.name,T.type,top(offset));
 	// top(offset) = top(offset)+T.width}
@@ -260,7 +258,7 @@ public class Smantic {
 			offset = offset + tree_pro.get(T).getWidth();
 			// 更新offset
 		} else { // 否则报错
-			String s = "Error at Line [" + tree.getChildren().get(1).getLine() + "]:\t[" + "变量" + id + "重复声明]";
+			String s = "Semantic error at Line [" + tree.getChildren().get(1).getLine() + "]:\t[" + "变量" + id + "重复声明]";
 			errors.add(s);
 		}
 	}
@@ -272,7 +270,7 @@ public class Smantic {
 		ArrayList<TreeNode> c = tree.getChildren();
 		int X = c.get(0).getId(); // X节点的唯一标识符
 		int C = c.get(1).getId(); // C节点的唯一标识符
-		Properties a1 = new Properties();
+		OneForAll a1 = new OneForAll();
 		a1.setType(tree_pro.get(C).getType());
 		a1.setWidth(tree_pro.get(C).getWidth());
 		tree_pro.set(T, a1);// 在T节点上附加相应属性
@@ -283,7 +281,7 @@ public class Smantic {
 	public static void semantic_7(Tree tree) {
 		int T = tree.getFather().getId(); // T
 
-		Properties a1 = new Properties();
+		OneForAll a1 = new OneForAll();
 		a1.setType("record");
 		a1.setWidth(off.pop());
 		tblptr.pop();
@@ -296,7 +294,7 @@ public class Smantic {
 		int X = tree.getFather().getId(); // X
 		t = "integer";
 		w = 4;
-		Properties a1 = new Properties();
+		OneForAll a1 = new OneForAll();
 		a1.setType("integer");
 		a1.setWidth(4);
 		tree_pro.set(X, a1);
@@ -307,7 +305,7 @@ public class Smantic {
 		int X = tree.getFather().getId(); // X
 		t = "real";
 		w = 8;
-		Properties a1 = new Properties();
+		OneForAll a1 = new OneForAll();
 		a1.setType("real");
 		a1.setWidth(8);
 		tree_pro.set(X, a1);
@@ -318,7 +316,7 @@ public class Smantic {
 		int C = tree.getFather().getId(); // C
 		int num = Integer.parseInt(tree.getChildren().get(1).getValue()); // num
 		int C1 = tree.getChildren().get(3).getId(); // C1
-		Properties a1 = new Properties();
+		OneForAll a1 = new OneForAll();
 		Array a2 = new Array();
 
 		a2.setLength(num);
@@ -339,14 +337,13 @@ public class Smantic {
 	public static void semantic_11(Tree tree) {
 		// 注意这里的t 和 w是全局变量，由X传递过来
 		int C = tree.getFather().getId(); // C
-		Properties a1 = new Properties();
+		OneForAll a1 = new OneForAll();
 		a1.setType(t);
 		a1.setWidth(w);
 		tree_pro.set(C, a1);
 	}
 
-	// 下面是简单赋值语句的翻译
-
+	// 简单赋值语句的翻译
 	// S -> id = E ; {p=lookup(id.lexeme); if p==nil then error;
 	// gencode(p'='E.addr); S.nextlist=null}
 	public static void semantic_12(Tree tree) {
@@ -356,7 +353,7 @@ public class Smantic {
 
 		int[] i = lookup(id);
 		if (i[0] == -1) {
-			String s = "Error at Line [" + tree.getChildren().get(0).getLine() + "]:\t[" + "变量" + id + "引用前未声明]";
+			String s = "Semantic error at Line [" + tree.getChildren().get(0).getLine() + "]:\t[" + "变量" + id + "引用前未声明]";
 			errors.add(s);
 			enter(tblptr.peek(), id, "integer", offset);
 			offset = offset + 4;
@@ -367,7 +364,7 @@ public class Smantic {
 		four_addr.add(new FourAddr("=", tree_pro.get(E).getAddr(), "-", id));
 		// System.out.println(code);
 
-		Properties a1 = new Properties();
+		OneForAll a1 = new OneForAll();
 		a1.setNext(new ArrayList<Integer>());
 		tree_pro.set(S, a1);
 	}
@@ -385,7 +382,7 @@ public class Smantic {
 				tree_pro.get(L).getName() + "[" + tree_pro.get(L).getOffset() + "]"));
 		// System.out.println(code);
 
-		Properties a1 = new Properties();
+		OneForAll a1 = new OneForAll();
 		a1.setNext(new ArrayList<Integer>());
 		tree_pro.set(S, a1);
 	}
@@ -398,7 +395,7 @@ public class Smantic {
 		String newtemp1 = newtemp();
 		if ((tree_pro.get(E1).getType().equals("integer") && tree_pro.get(E2).getType().equals("integer"))
 				|| (tree_pro.get(E1).getType().equals("real") && tree_pro.get(E2).getType().equals("real"))) {
-			Properties a1 = new Properties();
+			OneForAll a1 = new OneForAll();
 			a1.setAddr(newtemp1);
 			a1.setType(tree_pro.get(E1).getType());
 			tree_pro.set(E, a1);
@@ -409,7 +406,7 @@ public class Smantic {
 		}
 		if ((tree_pro.get(E1).getType().equals("real") && tree_pro.get(E2).getType().equals("integer"))) {
 			String newtemp2 = newtemp();
-			Properties a1 = new Properties();
+			OneForAll a1 = new OneForAll();
 			a1.setAddr(newtemp2);
 			a1.setType("real");
 			tree_pro.set(E, a1);
@@ -423,7 +420,7 @@ public class Smantic {
 		}
 		if ((tree_pro.get(E1).getType().equals("integer") && tree_pro.get(E2).getType().equals("real"))) {
 			String newtemp2 = newtemp();
-			Properties a1 = new Properties();
+			OneForAll a1 = new OneForAll();
 			a1.setAddr(newtemp2);
 			a1.setType("real");
 			tree_pro.set(E, a1);
@@ -437,7 +434,7 @@ public class Smantic {
 		}
 		if (tree_pro.get(E1).getType().contains("array")) {
 			String newtemp2 = newtemp();
-			Properties a1 = new Properties();
+			OneForAll a1 = new OneForAll();
 			a1.setAddr(newtemp2);
 			a1.setType("integer");
 			tree_pro.set(E, a1);
@@ -450,12 +447,12 @@ public class Smantic {
 			four_addr.add(new FourAddr("=", String.valueOf(x), "-", newtemp1));
 			four_addr.add(new FourAddr("+", newtemp1, tree_pro.get(E2).getAddr(), newtemp2));
 
-			String s = "Error at Line [" + tree.getChildren().get(0).getLine() + "]:\t[" + "整型变量与数组变量相加减]";
+			String s = "Semantic error at Line [" + tree.getChildren().get(0).getLine() + "]:\t[" + "整型变量与数组变量相加减]";
 			errors.add(s);
 		}
 		if (tree_pro.get(E2).getType().contains("array")) {
 			String newtemp2 = newtemp();
-			Properties a1 = new Properties();
+			OneForAll a1 = new OneForAll();
 			// System.out.println(newtemp2);
 			a1.setAddr(newtemp2);
 			a1.setType("integer");
@@ -469,7 +466,7 @@ public class Smantic {
 			four_addr.add(new FourAddr("=", String.valueOf(x), "-", newtemp1));
 			four_addr.add(new FourAddr("+", tree_pro.get(E1).getAddr(), newtemp1, newtemp2));
 
-			String s = "Error at Line [" + tree.getChildren().get(1).getLine() + "]:\t[" + "整型变量与数组变量相加减]";
+			String s = "Semantic error at Line [" + tree.getChildren().get(1).getLine() + "]:\t[" + "整型变量与数组变量相加减]";
 			errors.add(s);
 		}
 	}
@@ -479,7 +476,7 @@ public class Smantic {
 		int E = tree.getFather().getId(); // E
 		int E1 = tree.getChildren().get(0).getId(); // E1
 
-		Properties a1 = new Properties();
+		OneForAll a1 = new OneForAll();
 		a1.setAddr(tree_pro.get(E1).getAddr());
 		a1.setType(tree_pro.get(E1).getType());
 		tree_pro.set(E, a1);
@@ -492,7 +489,7 @@ public class Smantic {
 		int E2 = tree.getChildren().get(2).getId(); // E2
 		String newtemp = newtemp();
 
-		Properties a1 = new Properties();
+		OneForAll a1 = new OneForAll();
 		a1.setAddr(newtemp);
 		tree_pro.set(E, a1);
 
@@ -505,7 +502,7 @@ public class Smantic {
 	public static void semantic_18(Tree tree) {
 		int E = tree.getFather().getId(); // E
 		int E1 = tree.getChildren().get(1).getId(); // E1
-		Properties a1 = new Properties();
+		OneForAll a1 = new OneForAll();
 		a1.setAddr(tree_pro.get(E1).getAddr());
 		a1.setType(tree_pro.get(E1).getType());
 		tree_pro.set(E, a1);
@@ -517,7 +514,7 @@ public class Smantic {
 		int E1 = tree.getChildren().get(1).getId(); // E1
 		String newtemp = newtemp();
 
-		Properties a1 = new Properties();
+		OneForAll a1 = new OneForAll();
 		a1.setAddr(newtemp);
 		a1.setType(tree_pro.get(E1).getType());
 		tree_pro.set(E, a1);
@@ -534,18 +531,18 @@ public class Smantic {
 
 		int[] i = lookup(id);
 		if (i[0] == -1) {
-			String s = "Error at Line [" + tree.getChildren().get(0).getLine() + "]:\t[" + "变量" + id + "引用前未声明]";
+			String s = "Semantic error at Line [" + tree.getChildren().get(0).getLine() + "]:\t[" + "变量" + id + "引用前未声明]";
 			errors.add(s);
 			enter(tblptr.peek(), id, "integer", offset);
 			offset = offset + 4;
-			Properties a1 = new Properties();
+			OneForAll a1 = new OneForAll();
 			a1.setAddr(id);
 			a1.setType("integer");
 			tree_pro.set(E, a1);
 			return;
 		}
 
-		Properties a1 = new Properties();
+		OneForAll a1 = new OneForAll();
 		a1.setAddr(id);
 		a1.setType(table.get(i[0]).get(i[1]).getType());
 		tree_pro.set(E, a1);
@@ -555,7 +552,7 @@ public class Smantic {
 	public static void semantic_21(Tree tree) {
 		int E = tree.getFather().getId(); // E
 		String num = tree.getChildren().get(0).getValue(); // num
-		Properties a1 = new Properties();
+		OneForAll a1 = new OneForAll();
 		a1.setAddr(num);
 		a1.setType("integer");
 		tree_pro.set(E, a1);
@@ -567,7 +564,7 @@ public class Smantic {
 		int L = tree.getChildren().get(0).getId(); // L
 		String newtemp = newtemp();
 
-		Properties a1 = new Properties();
+		OneForAll a1 = new OneForAll();
 		a1.setAddr(newtemp);
 		a1.setType("integer");
 		tree_pro.set(E, a1);
@@ -590,11 +587,11 @@ public class Smantic {
 		int[] i = lookup(id);
 		if (i[0] == -1) {
 			String error = id + "符号未定义";
-			String s = "Error at Line [" + tree.getChildren().get(0).getLine() + "]:\t[" + "数组变量" + id + "引用前未声明]";
+			String s = "Semantic error at Line [" + tree.getChildren().get(0).getLine() + "]:\t[" + "数组变量" + id + "引用前未声明]";
 			errors.add(s);
 			// return;
 
-			Properties a1 = new Properties();
+			OneForAll a1 = new OneForAll();
 			a1.setName(id);
 			a1.setType("array(1,integer)");
 			a1.setOffset(newtemp);
@@ -608,11 +605,11 @@ public class Smantic {
 		}
 
 		if (!table.get(i[0]).get(i[1]).getType().contains("array")) {
-			String s = "Error at Line [" + tree.getChildren().get(0).getLine() + "]:\t[" + "非数组变量" + id + "访问数组]";
+			String s = "Semantic error at Line [" + tree.getChildren().get(0).getLine() + "]:\t[" + "非数组变量" + id + "访问数组]";
 			errors.add(s);
 		}
 
-		Properties a1 = new Properties();
+		OneForAll a1 = new OneForAll();
 		a1.setName(id);
 		a1.setType(Others.elemType(table.get(i[0]).get(i[1]).getType()));
 		a1.setOffset(newtemp);
@@ -643,7 +640,7 @@ public class Smantic {
 		String newtemp1 = newtemp();
 		String newtemp2 = newtemp();
 
-		Properties a1 = new Properties();
+		OneForAll a1 = new OneForAll();
 		a1.setName(tree_pro.get(L1).getName());
 		a1.setType(Others.elemType(tree_pro.get(L1).getType()));
 		a1.setOffset(newtemp2);
@@ -679,7 +676,7 @@ public class Smantic {
 
 		backpatch(tree_pro.get(B1).getFalse(), tree_pro.get(M).getQuad());
 
-		Properties a1 = new Properties();
+		OneForAll a1 = new OneForAll();
 		a1.setTrue(merge(tree_pro.get(B1).getTrue(), tree_pro.get(B2).getTrue()));
 		a1.setFalse(tree_pro.get(B2).getFalse());
 		tree_pro.set(B, a1);
@@ -690,7 +687,7 @@ public class Smantic {
 		int B = tree.getFather().getId(); // B
 		int B1 = tree.getChildren().get(0).getId(); // B1
 
-		Properties a1 = new Properties();
+		OneForAll a1 = new OneForAll();
 		a1.setTrue(tree_pro.get(B1).getTrue());
 		a1.setFalse(tree_pro.get(B1).getFalse());
 		tree_pro.set(B, a1);
@@ -706,7 +703,7 @@ public class Smantic {
 
 		backpatch(tree_pro.get(B1).getTrue(), tree_pro.get(M).getQuad());
 
-		Properties a1 = new Properties();
+		OneForAll a1 = new OneForAll();
 		a1.setTrue(tree_pro.get(B2).getTrue());
 		a1.setFalse(merge(tree_pro.get(B1).getFalse(), tree_pro.get(B2).getFalse()));
 		tree_pro.set(B, a1);
@@ -717,7 +714,7 @@ public class Smantic {
 		int B = tree.getFather().getId(); // B
 		int B1 = tree.getChildren().get(1).getId(); // B1
 
-		Properties a1 = new Properties();
+		OneForAll a1 = new OneForAll();
 		a1.setTrue(tree_pro.get(B1).getFalse());
 		a1.setFalse(tree_pro.get(B1).getTrue());
 		tree_pro.set(B, a1);
@@ -728,7 +725,7 @@ public class Smantic {
 		int B = tree.getFather().getId(); // B
 		int B1 = tree.getChildren().get(1).getId(); // B1
 
-		Properties a1 = new Properties();
+		OneForAll a1 = new OneForAll();
 		a1.setTrue(tree_pro.get(B1).getTrue());
 		a1.setFalse(tree_pro.get(B1).getFalse());
 		tree_pro.set(B, a1);
@@ -743,7 +740,7 @@ public class Smantic {
 		int R = tree.getChildren().get(1).getId(); // R
 		int E2 = tree.getChildren().get(2).getId(); // E2
 
-		Properties a1 = new Properties();
+		OneForAll a1 = new OneForAll();
 		a1.setTrue(makelist(nextquad()));
 		a1.setFalse(makelist(nextquad() + 1));
 		tree_pro.set(B, a1);
@@ -765,7 +762,7 @@ public class Smantic {
 	public static void semantic_32(Tree tree) {
 		int B = tree.getFather().getId(); // B
 
-		Properties a1 = new Properties();
+		OneForAll a1 = new OneForAll();
 		a1.setTrue(makelist(nextquad()));
 		tree_pro.set(B, a1);
 
@@ -779,7 +776,7 @@ public class Smantic {
 	public static void semantic_33(Tree tree) {
 		int B = tree.getFather().getId(); // B
 
-		Properties a1 = new Properties();
+		OneForAll a1 = new OneForAll();
 		a1.setFalse(makelist(nextquad()));
 		tree_pro.set(B, a1);
 
@@ -794,7 +791,7 @@ public class Smantic {
 		int R = tree.getFather().getId(); // R
 		String op = tree.getChildren().get(0).getValue(); // op
 
-		Properties a1 = new Properties();
+		OneForAll a1 = new OneForAll();
 		a1.setName(op);
 		tree_pro.set(R, a1);
 	}
@@ -804,7 +801,7 @@ public class Smantic {
 		int S = tree.getFather().getId(); // S
 		int S1 = tree.getChildren().get(0).getId(); // S1
 
-		Properties a1 = new Properties();
+		OneForAll a1 = new OneForAll();
 		List<Integer> li = tree_pro.get(S1).getNext();
 		// if (li!=null)
 		a1.setNext(tree_pro.get(S1).getNext());
@@ -825,7 +822,7 @@ public class Smantic {
 
 		backpatch(tree_pro.get(B).getTrue(), tree_pro.get(M1).getQuad());
 		backpatch(tree_pro.get(B).getFalse(), tree_pro.get(M2).getQuad());
-		Properties a1 = new Properties();
+		OneForAll a1 = new OneForAll();
 		a1.setNext(merge(tree_pro.get(S1).getNext(), merge(tree_pro.get(N).getNext(), tree_pro.get(S2).getNext())));
 		tree_pro.set(S, a1);
 	}
@@ -842,7 +839,7 @@ public class Smantic {
 
 		backpatch(tree_pro.get(S1).getNext(), tree_pro.get(M1).getQuad());
 		backpatch(tree_pro.get(B).getTrue(), tree_pro.get(M2).getQuad());
-		Properties a1 = new Properties();
+		OneForAll a1 = new OneForAll();
 		a1.setNext(tree_pro.get(B).getFalse());
 		tree_pro.set(S, a1);
 
@@ -862,7 +859,7 @@ public class Smantic {
 
 		backpatch(tree_pro.get(B).getTrue(), tree_pro.get(M).getQuad());
 
-		Properties a1 = new Properties();
+		OneForAll a1 = new OneForAll();
 		a1.setNext(merge(tree_pro.get(B).getFalse(), tree_pro.get(S1).getNext()));
 		tree_pro.set(S, a1);
 	}
@@ -872,7 +869,7 @@ public class Smantic {
 		int S = tree.getFather().getId(); // S
 		int S1 = tree.getChildren().get(1).getId(); // S1
 
-		Properties a1 = new Properties();
+		OneForAll a1 = new OneForAll();
 		a1.setNext(tree_pro.get(S1).getNext());
 		tree_pro.set(S, a1);
 	}
@@ -886,7 +883,7 @@ public class Smantic {
 
 		backpatch(tree_pro.get(S1).getNext(), tree_pro.get(M).getQuad());
 
-		Properties a1 = new Properties();
+		OneForAll a1 = new OneForAll();
 		a1.setNext(tree_pro.get(S2).getNext());
 		tree_pro.set(S, a1);
 	}
@@ -905,7 +902,7 @@ public class Smantic {
 	public static void semantic_52(Tree tree) {
 		int M = tree.getFather().getId(); // M
 
-		Properties a1 = new Properties();
+		OneForAll a1 = new OneForAll();
 		a1.setQuad(nextquad());
 		tree_pro.set(M, a1);
 	}
@@ -914,7 +911,7 @@ public class Smantic {
 	public static void semantic_53(Tree tree) {
 		int N = tree.getFather().getId(); // N
 
-		Properties a1 = new Properties();
+		OneForAll a1 = new OneForAll();
 		a1.setNext(makelist(nextquad()));
 		tree_pro.set(N, a1);
 
@@ -933,9 +930,9 @@ public class Smantic {
 		int[] index = lookup(id);
 
 		if (!table.get(index[0]).get(index[1]).getType().equals("函数")) {
-			String s = "Error at Line [" + tree.getChildren().get(0).getLine() + "]:\t[" + id + "不是函数,不能用于call语句]";
+			String s = "Semantic error at Line [" + tree.getChildren().get(0).getLine() + "]:\t[" + id + "不是函数,不能用于call语句]";
 			errors.add(s);
-			Properties a1 = new Properties();
+			OneForAll a1 = new OneForAll();
 			a1.setNext(new ArrayList<Integer>());
 			tree_pro.set(S, a1);
 			return;
@@ -951,7 +948,7 @@ public class Smantic {
 		three_addr.add(code);
 		four_addr.add(new FourAddr("call", String.valueOf(size), "-", id));
 
-		Properties a1 = new Properties();
+		OneForAll a1 = new OneForAll();
 		a1.setNext(new ArrayList<Integer>());
 		tree_pro.set(S, a1);
 	}

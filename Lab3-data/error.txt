@@ -1,0 +1,5 @@
+Semantic error at Line [18]:	[变量z重复声明]
+Semantic error at Line [39]:	[a不是函数,不能用于call语句]
+Semantic error at Line [42]:	[变量e1引用前未声明]
+Semantic error at Line [45]:	[非数组变量a访问数组]
+Semantic error at Line [48]:	[整型变量与数组变量相加减]

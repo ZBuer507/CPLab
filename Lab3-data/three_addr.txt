@@ -1,11 +1,32 @@
 if a<b goto 3
-goto 
+goto 11
 if c<d goto 5
 goto 8
-t1 = i+1
-i = t1
+t1 = y+z
+x = t1
 goto 1
-t2 = -1
-t3 = i+t2
-i = t3
+t2 = y*z
+x = t2
 goto 1
+t3 = 3*2
+t4 = 5*4
+t5 = t3+t4
+arr[t5] = 2
+t6 = m+n
+a = t6
+t7 = m+n
+t8 = t7*9
+m = t8
+t9 = intTOreal a
+t10 = e+t9
+e = t10
+e1 = 7
+t11 = 0
+a[t11] = 1
+t12 = 2
+t13 = a+t12
+a = t13
+param 1
+param 2
+param 3
+call fuction2 3

@@ -10,8 +10,8 @@ import java.util.Stack;
 
 public class Main {
 	public static void main(String[] args) {
-		String file_name = "Lab3-data/test3-1.txt";
-		//String file_name = "Lab3-data/test3-2.txt";
+		//String file_name = "Lab3-data/test3-1.txt";
+		String file_name = "Lab3-data/test3-2.txt";
 		//0表示新建分析表
 		int iscached = 1;
 		

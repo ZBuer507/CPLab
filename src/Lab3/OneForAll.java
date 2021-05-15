@@ -3,8 +3,7 @@ package Lab3;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Properties
-{
+public class OneForAll{
 	private String name;  // 变量或者函数的name 
 	private String type;  // 节点类型
 	private String offset;  // 数组类型的属性
