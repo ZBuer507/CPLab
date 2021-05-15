@@ -1,0 +1,5 @@
+(a,	integer,	0)
+(b,	integer,	4)
+(c,	integer,	8)
+(d,	integer,	12)
+(i,	integer,	16)
