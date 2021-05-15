@@ -9,24 +9,27 @@ import java.util.Scanner;
 import java.util.TreeSet;
 
 public class ProductionRec{
-	public static String emp = "ε";  // 空串
-	public static String end = "#";  // 结束符
-	public static TreeSet<String> VN = new TreeSet<String>();  // 非终结符集
-	public static TreeSet<String> VT = new TreeSet<String>();  // 终结符集
-	public static ArrayList<Production> F = new ArrayList<Production>();  // 产生式集
-	//  每个符号的first集
+	public static String emp = "ε";
+	public static String end = "#";
+	//非终结符集
+	public static TreeSet<String> VN = new TreeSet<String>();  
+	//终结符集
+	public static TreeSet<String> VT = new TreeSet<String>();  
+	//产生式集
+	public static ArrayList<Production> F = new ArrayList<Production>();
+	//每个符号的first集
 	public static HashMap<String,TreeSet<String> > firstMap = new HashMap<String,TreeSet<String>>();
-	//在类被加载的时候运行此段代码
+
 	static{
 		//读取文法，添加产生式
 		try{
-			read("data/Productions.txt");
+			read("Lab2-data/Productions.txt");
 		}catch (FileNotFoundException e){
 			e.printStackTrace();
 		}
 
-		// 添加非终结符
-		VN.add("P'");	VN.add("P");  VN.add("SEMI");   VN.add("COMMA");   VN.add("ASSIGNOP"); 
+		//非终结符
+		VN.add("SEMI");   VN.add("COMMA");   VN.add("ASSIGNOP"); 
 		VN.add("RELOP");	VN.add("PLUS");	VN.add("MINUS");	VN.add("STAR");
 		VN.add("DIV");	VN.add("AND");	VN.add("OR");	VN.add("DOT");
 		VN.add("NOT");	VN.add("TYPE");	VN.add("LP");	VN.add("RP");
@@ -39,7 +42,7 @@ public class ProductionRec{
 		VN.add("StmtList");	VN.add("Stmt");	VN.add("Exp");
 		VN.add("DefList");	VN.add("Def");	VN.add("Dec");
 		VN.add("Args");	VN.add("ExtDecList");	VN.add("DecList");
-		// 添加终结符
+		//终结符
 		VT.add(";");
 		VT.add("int");	VT.add("float");	VT.add("struct");	VT.add("return");
 		VT.add("ID");	VT.add("INT");	VT.add("FLOAT");
@@ -92,7 +95,7 @@ public class ProductionRec{
 		//System.out.println(firstMap);
 	}
 	
-	//一个用于查找first的递归函数
+	//查找first
 	private static TreeSet<String> findFirst(String vn){
 		TreeSet<String> set = new TreeSet<String>();
 		int size1 = 0;
@@ -112,11 +115,11 @@ public class ProductionRec{
 						// 去除左递归
 						if(!vn.equals(d.list.get(0))){
 							TreeSet<String> set2 = findFirst(d.list.get(0));
-							set.addAll(set2);  // 再次递归
+							set.addAll(set2);  //递归
 							if(set2.contains(emp)){
 								for(int j=1; j<d.list.size(); j++){
 									TreeSet<String> set3 = findFirst(d.list.get(j));									
-									set.addAll(set3);  // 再次递归
+									set.addAll(set3);  //递归
 									if(!set3.contains(emp))
 										break;
 								}

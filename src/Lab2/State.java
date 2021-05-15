@@ -5,17 +5,16 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class State implements Serializable{
-	// 项目集编号,即DFA状态号
+	//项目集编号,即DFA状态号
 	public int id;  
 	//LR项目的集合,每个元素表示一个产生式状态
 	public ArrayList<Sets> set = new ArrayList<Sets>();  
 	
-    //构造函数，输入是状态号
-	public State(int id)	{
+	public State(int id){
 		this.id = id;
 	}
 	
-	public boolean contains(Sets lrd)	{
+	public boolean contains(Sets lrd){
 		for(Sets l:set)
 			if(l.equalTo(lrd))
 				return true;
@@ -63,7 +62,6 @@ public class State implements Serializable{
 	
 	public boolean equalTo(State state){
 		if(this.toString().hashCode()==state.toString().hashCode())
-            // if(contains(set,state.set)&&contains(state.set,set)){
 			return true;
 		else
 			return false;

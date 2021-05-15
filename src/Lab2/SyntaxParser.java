@@ -72,7 +72,7 @@ public class SyntaxParser{
 		for(int i=1;i<=indent;i++)
 			output+="  ";
 		if(root.code==1)
-			tree.add(output+"id: "+root.value+" ("+root.line+")");
+			tree.add(output+"ID: "+root.value+" ("+root.line+")");
 		else if(root.code==2||root.code==3)
 			tree.add(output+root.type+": "+root.value+" ("+root.line+")");
 		else
@@ -132,7 +132,7 @@ public class SyntaxParser{
 			int state = stateStack.lastElement();
 			//查action表
 			String action = table.ACTION(state, value);
-			//System.out.println(action);
+			System.out.println(action);
 			if(action.startsWith("s")){
 				int newState = Integer.parseInt(action.substring(1));
 				token.type = value;
@@ -158,7 +158,7 @@ public class SyntaxParser{
 				stateStack.push(s);
 				tokenStack.push(temptoken);
 			}else if(action.equals("acc")){
-				//System.out.print("Accepted"+"\n");
+				System.out.print("Accepted"+"\n");
 				//返回语法树的根节点
 				return tokenStack.get(1);
 			}else{

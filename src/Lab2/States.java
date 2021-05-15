@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-//这个类是一个辅助类，用于整合各个分析器状态
 public class States implements Serializable{
 	public ArrayList<State> states = new ArrayList<State>();
 	public State get(int i){
@@ -19,7 +18,7 @@ public class States implements Serializable{
 	}
 	
 	public void writefile(){		
-        String path = "data/Sets.txt";
+        String path = "Lab2-data/Sets.txt";
         try{
             File file = new File(path);
             FileWriter fw = new FileWriter(file);

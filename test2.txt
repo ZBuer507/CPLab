@@ -6,17 +6,21 @@ int fun(int n){
 	}
 }
 
+int fun2(){
+	return 2;
+}
+
 struct str{
    float f1 = 0.5;
    int i1 = 1;
 } st;
 
 int main(){
-	int j[10];
+	int j[10][10];
 	int i;
 	i = 0;
 	while(i < 10){
-		j[i] = fun(i);
+		j[i][i] = fun(i);
 		i = i + 1;
 	}
 	return 0;

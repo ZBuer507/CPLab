@@ -2,7 +2,7 @@ package Lab2;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-//这个类表示一个产生式
+
 //序列化，便于输出和写入
 public class Production implements Serializable{
 	// 产生式左部

@@ -11,30 +11,30 @@ import java.util.Iterator;
 import java.util.Set;
 
 public class LR1 implements Serializable{
-	public States dfa;  // 所有DFA状态
-	public int stateNum;  // DFA状态数
-	public int actionLength;  // Action表列数
-	public int gotoLength;  // GoTo表列数
-	private String[] actionCol;  // Action表的表头
-	private String[] gotoCol;  // GoTo表的表头
-	private String[][] actionTable;  // Action表，二维数组
-	private int[][] gotoTable;  // GoTo表，二维数组
+	public States dfa;
+	public int stateNum;
+	public int actionLength;
+	public int gotoLength;
+	private String[] actionCol;
+	private String[] gotoCol;
+	private String[][] actionTable;
+	private int[][] gotoTable;
 	
-	//  当第x号DFA状态,输入S符号时,转移到第y号DFA状态,则:
-	private ArrayList<Integer> gotoStart = new ArrayList<Integer>();  // 存储第x号DFA状态
-	private ArrayList<Integer> gotoEnd = new ArrayList<Integer>();  // 存储第y号DFA状态
-	private ArrayList<String> gotoPath = new ArrayList<String>();  // 存储S符号
+	//当第x号DFA状态,输入S符号时,转移到第y号DFA状态,则:
+	private ArrayList<Integer> gotoStart = new ArrayList<Integer>();
+	private ArrayList<Integer> gotoEnd = new ArrayList<Integer>();
+	private ArrayList<String> gotoPath = new ArrayList<String>();
 	
-   //构造分析表
+	//构造分析表
 	public LR1(){
-		createTableHeader();//建表
+		createTableHeader();
 		this.actionLength = actionCol.length;
 		this.gotoLength = gotoCol.length;
-		createDFA();//创建DFA
+		createDFA();
 		this.stateNum = dfa.size();
 		this.gotoTable = new int[stateNum][gotoLength+actionLength-1];
 		this.actionTable = new String[stateNum][actionLength];
-		createAnalyzeTable();//填充语法分析表的相关内容
+		createAnalyzeTable();
 	}
 	
 	//建立分析表表头
@@ -64,7 +64,7 @@ public class LR1 implements Serializable{
 	
     //递归地建立一个DFA
 	private void createDFA(){
-		this.dfa = new States();//存放所有的状态
+		this.dfa = new States();
 		State state0 = new State(0);
 		state0.addNewDerivation(new Sets(getDerivation("P'").get(0),"#",0));  
 		// 状态0中加入一个增广的产生式
@@ -124,9 +124,7 @@ public class LR1 implements Serializable{
 		}
 	}
 
-	//类似于上一个函数的实现逻辑
-	private void addState(int lastState,String path,ArrayList<Sets> list)
-	{
+	private void addState(int lastState,String path,ArrayList<Sets> list){
 		State temp = new State(0);
 		for(int i = 0;i < list.size();i++){
 			list.get(i).index++;
@@ -185,7 +183,8 @@ public class LR1 implements Serializable{
 		gotoPath.add(path);
 		ArrayList<String> gotoPath = temp.getGotoPath();
 		for(String p:gotoPath){
-			ArrayList<Sets> l = temp.getLRDs(p);//直接通过路径传到下一个状态的情况
+			//直接通过路径传到下一个状态的情况
+			ArrayList<Sets> l = temp.getLRDs(p);
 			addState(temp.id,p,l);
 		}
 	}
@@ -348,7 +347,7 @@ public class LR1 implements Serializable{
 	
 	
 	public void writefile(StringBuffer str){		
-        String path = "data/Table.txt";
+        String path = "Lab2-data/Table.txt";
         try{
             File file = new File(path);
             FileWriter fw = new FileWriter(file);

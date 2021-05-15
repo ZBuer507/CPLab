@@ -2,12 +2,14 @@ package Lab2;
 
 import java.io.Serializable;
 
-//这个类表示一个产生式可能所处的状态
+//产生式状态
 public class Sets implements java.lang.Cloneable,Serializable{
-	public Production d;  // 产生式
-	public String lr;  // 展望符
-	public int index;  // 当前点所处位置
-	 // 构造函数，要求输入产生式本身，展望符和点所在位置
+	public Production d;
+	//展望符
+	public String lr;
+	//当前点所处位置
+	public int index;  
+	
 	public Sets(Production d,String lr,int index){
 		this.d = d;
 		this.lr = lr;
